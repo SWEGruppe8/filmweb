@@ -20,13 +20,13 @@
 apiVersion: skaffold/v2beta27
 kind: Config
 metadata:
-  name: buchweb
+  name: filmweb
 build:
   tagPolicy:
     envTemplate:
       template: "{{.TAG}}"
   artifacts:
-    - image: docker.io/juergenzimmermann/buchweb
+    - image: docker.io/juergenzimmermann/filmweb
   local: {}
 deploy:
   kustomize:
@@ -42,5 +42,5 @@ profiles:
           disableValidation: true
     portForward:
       - resourceType: service
-        resourceName: buchweb
+        resourceName: filmweb
         port: 80
