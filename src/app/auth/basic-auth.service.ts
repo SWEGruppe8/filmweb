@@ -71,7 +71,7 @@ export class BasicAuthService {
                     return of(err as HttpErrorResponse);
                 }),
 
-                map(result => this.#handleLogin(result, username, password)),
+                map((result: any) => this.#handleLogin(result, username, password)),
             );
     }
 

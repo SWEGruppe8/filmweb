@@ -65,7 +65,7 @@ export class JwtService {
                     return of(err as HttpErrorResponse);
                 }),
 
-                map(result => this.#handleLogin(result)),
+                map((result: any) => this.#handleLogin(result)),
             );
     }
 
