@@ -43,5 +43,5 @@ export interface FilmShared {
     umsatz: number;
     regiseeur: string;
     newsletter?: boolean;
-    isa: string;
+    isan: string;
 }
