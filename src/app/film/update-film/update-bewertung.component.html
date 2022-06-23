@@ -1,0 +1,17 @@
+<div class="row">
+    <label for="bewertungUpdate" class="col col-2 col-form-label gy-3">
+      Bewertung
+    </label>
+  
+    <div class="col col-10 gy-3" [formGroup]="updateForm">
+      <input
+        id="bewertungUpdate"
+        type="range"
+        class="form-range"
+        min="0"
+        max="5"
+        formControlName="bewertung"
+      />
+    </div>
+  </div>
+  
