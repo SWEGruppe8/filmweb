@@ -1,0 +1,11 @@
+
+<div class="row mt-2">
+    <label class="col col-1"> Genre </label>
+    <div class="col col-11">
+      <span [ngSwitch]="art">
+        <span *ngSwitchCase="'ACTION'">Action</span>
+        <span *ngSwitchCase="'LUSTIG'">Lustig</span>
+        <span *ngSwitchDefault>unbekannt</span>
+      </span>
+    </div>
+  </div>
