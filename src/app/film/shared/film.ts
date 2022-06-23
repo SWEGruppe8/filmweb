@@ -2,9 +2,9 @@ import { type Temporal } from '@js-temporal/polyfill';
 
 export const MAX_RATING = 5;
 
-export type Studio = 'WARNER' | 'DISNEY';
+export type Studio = 'DISNEY' | 'WARNER';
 
-export type FilmGenre = 'LUSTIG' | 'ACTION';
+export type FilmGenre = 'ACTION' | 'LUSTIG';
 
 export const ISAN_REGEX =
     // eslint-disable-next-line max-len
