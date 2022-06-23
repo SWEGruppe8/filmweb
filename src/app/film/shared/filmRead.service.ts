@@ -18,7 +18,7 @@ export interface Suchkriterien {
     titel: string;
     studio: Studio | '';
     genre: FilmGenre | '';
-    schlagwoerter: {spannend : boolean; gruselig: boolean };
+    schlagwoerter: { spannend: boolean; gruselig: boolean };
 }
 
 export interface FilmeServer {
@@ -228,7 +228,7 @@ export class FilmReadService {
         if (studio !== '') {
             httpParams = httpParams.set('studio', studio);
         }
-        if (spannend {
+        if (spannend) {
             httpParams = httpParams.set('spannend', 'true');
         }
         if (gruselig) {

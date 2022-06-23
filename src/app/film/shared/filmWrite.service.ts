@@ -49,7 +49,7 @@ export class FilmWriteService {
      */
     save(film: Film): Observable<SaveError | string> {
         log.debug('FilmWriteService.save: film=', film);
-        film.datum = Temporal.Now.plainDateISO();
+        film.release = Temporal.Now.plainDateISO();
         log.debug('FilmWriteService.save: film=', film);
 
         /* eslint-disable @typescript-eslint/naming-convention */

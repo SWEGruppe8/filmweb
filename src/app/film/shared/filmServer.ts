@@ -105,7 +105,8 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
  * @return Das JSON-Objekt f&uuml;r den RESTful Web Service
  */
 export const toFilmServer = (film: Film): FilmServer => {
-    const release = film.release === undefined ? undefined : film.release.toString();
+    const release =
+        film.release === undefined ? undefined : film.release.toString();
     return {
         titel: film.titel,
         bewertung: film.bewertung,
