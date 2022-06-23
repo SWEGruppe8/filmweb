@@ -1,0 +1,35 @@
+<section class="mt-1 ms-1" *ngIf="film">
+    <h4>Film {{ film.id }}:</h4>
+  
+    <div class="mt-2 ms-2">
+      <form [formGroup]="updateForm" role="form" (submit)="onSubmit()">
+        <hs-update-titel [updateForm]="updateForm" [currentValue]="film.titel">
+        </hs-update-titel>
+        <hs-update-genre [updateForm]="updateForm" [currentValue]="film.genre">
+        </hs-update-genre>
+        <hs-update-studio [updateForm]="updateForm" [currentValue]="film.studio">
+        </hs-update-studio>
+        <hs-update-bewertung [updateForm]="updateForm" [currentValue]="film.bewertung">
+        </hs-update-bewertung>
+        <hs-update-isan [updateForm]="updateForm" [currentValue]="film.isan">
+        </hs-update-isan>
+  
+        <div class="row">
+          <div class="col offset-2 gy-3">
+            <!-- form.pristine ist das Gegenteil von form.dirty -->
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="updateForm.pristine || updateForm.invalid"
+            >
+              <i class="material-icons">check</i>
+              <span class="ms-1">Stammdaten aktualisieren</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  
+  <hs-error-message [text]="errorMsg"></hs-error-message>
+  
