@@ -15,7 +15,7 @@
         <th>Nr.</th>
         <th>ID</th>
         <th>Titel</th>
-        <th>Verlag</th>
+        <th>Studio</th>
         <th>Schlagw&ouml;rter</th>
         <th>
           <span class="visually-hidden">Spalte f&uuml;r Details</span>
@@ -36,17 +36,17 @@
           <td (click)="onClick(film)">{{ film.id }}</td>
           <td (click)="onClick(film)">{{ film.titel }}</td>
           <td (click)="onClick(film)">
-            <span [ngSwitch]="film.verlag">
-              <span *ngSwitchCase="'FOO_VERLAG'">Foo Verlag</span>
-              <span *ngSwitchCase="'BAR_VERLAG'">Bar Verlag</span>
+            <span [ngSwitch]="film.studio">
+              <span *ngSwitchCase="'FOO_STUDIO'">Foo Studio</span>
+              <span *ngSwitchCase="'BAR_STUDIO'">Bar Studio</span>
               <span *ngSwitchDefault>unbekannt</span>
             </span>
           </td>
           <td (click)="onClick(film)">
             <span *ngFor="let schlagwort of film.schlagwoerter">
               <span [ngSwitch]="schlagwort">
-                <span *ngSwitchCase="'JAVASCRIPT'"> JavaScript<br /> </span>
-                <span *ngSwitchCase="'TYPESCRIPT'"> TypeScript </span>
+                <span *ngSwitchCase="'SPANNED'"> Spanned<br /> </span>
+                <span *ngSwitchCase="'GRUSELIG'"> Gruselig </span>
               </span>
             </span>
           </td>
