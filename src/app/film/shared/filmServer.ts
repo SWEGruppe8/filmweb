@@ -89,7 +89,7 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
         studio,
         release: releaseTemporal,
         umsatz,
-        regisseur: regisseur ?? 0,
+        regisseur,
         newsletter,
         schlagwoerter: schlagwoerter ?? [],
         isan,
