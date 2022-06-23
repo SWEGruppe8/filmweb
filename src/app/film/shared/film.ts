@@ -41,7 +41,7 @@ export interface FilmShared {
     studio?: Studio | '';
     genre: FilmGenre;
     umsatz: number;
-    regiseeur: string;
+    regisseur: string;
     newsletter?: boolean;
-    isa: string;
+    isan: string;
 }
