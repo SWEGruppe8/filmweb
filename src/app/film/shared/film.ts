@@ -23,7 +23,7 @@ export interface Film {
     studio: Studio | '' | undefined;
     release: Temporal.PlainDate | undefined;
     umsatz: number;
-    regisseur: string;
+    regisseur: number;
     newsletter: boolean | undefined;
     schlagwoerter: string[];
     isan: string;
