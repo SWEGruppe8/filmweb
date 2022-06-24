@@ -49,12 +49,12 @@ export const toFilm = (filmForm: FilmForm) => {
 
     const regisseurNumber = regisseur === undefined ? 0 : regisseur / 100; // eslint-disable-line @typescript-eslint/no-magic-numbers
 
-    const schlagwoerter: string[] = [];
+    const schauspieler: string[] = [];
     if (leonardo) {
-        schlagwoerter.push('LEONARDO');
+        schauspieler.push('LEONARDO');
     }
     if (salma) {
-        schlagwoerter.push('SALMA');
+        schauspieler.push('SALMA');
     }
 
     const film: Film = {
@@ -66,7 +66,7 @@ export const toFilm = (filmForm: FilmForm) => {
         umsatz,
         regisseur: regisseurNumber,
         newsletter,
-        schlagwoerter,
+        schauspieler,
         isan,
         version: 0,
     };
