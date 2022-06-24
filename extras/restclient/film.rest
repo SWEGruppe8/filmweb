@@ -30,8 +30,8 @@ GET {{localHTTPS}}/rest/filme?titel=a
 ### Suche mit vorhandener ISAN-Nummber
 GET {{localHTTPS}}/rest/filme?isan=000-0-00000-000-1
 
-### Suche mit vorhandenen Schlagwoertern
-GET {{localHTTPS}}/rest/filme?spannend=true&gruselig=true
+### Suche mit vorhandenen Schauspielern
+GET {{localHTTPS}}/rest/filme?leonardo=true&salma=true
 
 ### Suche mit gueltiger Filmart
 GET {{localHTTPS}}/rest/filme?art=KINDLE

@@ -3,41 +3,41 @@ import { Subject } from 'rxjs';
 import log from 'loglevel';
 
 /**
- * Komponente f&uuml;r das Tag <code>hs-suche-schlagwoerter</code>
+ * Komponente f&uuml;r das Tag <code>hs-suche-schauspieler</code>
  */
 @Component({
-    selector: 'hs-suche-schlagwoerter',
-    templateUrl: './suche-schlagwoerter.component.html',
+    selector: 'hs-suche-schauspieler',
+    templateUrl: './suche-schauspieler.component.html',
 })
-export class SucheSchlagwoerterComponent {
-    spannend = false;
+export class SucheSchauspielerComponent {
+    leonardo = false;
 
-    gruselig = false;
-
-    @Output()
-    readonly spannend$ = new Subject<boolean>();
+    salma = false;
 
     @Output()
-    readonly gruselig$ = new Subject<boolean>();
+    readonly leonardo$ = new Subject<boolean>();
+
+    @Output()
+    readonly salma$ = new Subject<boolean>();
 
     constructor() {
-        log.debug('SucheSchlagwoerterComponent.constructor()');
+        log.debug('SucheSchauspielerComponent.constructor()');
     }
 
-    onChangeSpannend(event: Event) {
-        // https://stackoverflow.com/questions/44321326/property-value-does-not-exist-on-type-eventtarget-in-gruselig
+    onChangeLeonardo(event: Event) {
+        // https://stackoverflow.com/questions/44321326/property-value-does-not-exist-on-type-eventtarget-in-salma
         const { checked } = event.target as HTMLInputElement;
         log.debug(
-            `SucheSchlagwoerterComponent.onChangeSpannend: checked=${checked}`,
+            `SucheSchauspielerComponent.onChangeLeonardo: checked=${checked}`,
         );
-        this.spannend$.next(checked);
+        this.leonardo$.next(checked);
     }
 
-    onChangeGruselig(event: Event) {
+    onChangeSalma(event: Event) {
         const { checked } = event.target as HTMLInputElement;
         log.debug(
-            `SucheSchlagwoerterComponent.onChangeGruselig: checked=${checked}`,
+            `SucheSchauspielerComponent.onChangeSalma: checked=${checked}`,
         );
-        this.gruselig$.next(checked);
+        this.salma$.next(checked);
     }
 }
