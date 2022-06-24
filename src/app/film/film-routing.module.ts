@@ -1,10 +1,10 @@
 import { RouterModule, type Routes } from '@angular/router';
 import { AdminGuard } from '../auth/admin.guard';
 import { BalkendiagrammComponent } from './diagramme/balkendiagramm.component';
-import { FilmModule } from './film.module';
 import { CreateFilmComponent } from './create-film/create-film.component';
 import { CreateFilmGuard } from './create-film/create-film.guard';
 import { DetailsFilmComponent } from './details-film/details-film.component';
+import { FilmModule } from './film.module';
 import { LiniendiagrammComponent } from './diagramme/liniendiagramm.component';
 import { NgModule } from '@angular/core';
 import { SucheFilmeComponent } from './suche-filme/suche-filme.component';
