@@ -43,7 +43,7 @@ export class LiniendiagrammComponent implements OnInit {
                         throw new KeineFilmeError();
                     }
 
-                    return result.filter(film => film.rating !== undefined);
+                    return result.filter(film => film.bewertung !== undefined);
                 }),
                 tap(filmItems => {
                     const bewertungItems = this.#getBewertungItems(filmItems);
@@ -60,7 +60,7 @@ export class LiniendiagrammComponent implements OnInit {
         return filme.map(film => {
             return {
                 name: film.id!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
-                value: film.rating!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
+                value: film.bewertung!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
             };
         });
     }
