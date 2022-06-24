@@ -1,16 +1,17 @@
 import { ActivatedRoute, Router } from '@angular/router'; // eslint-disable-line @typescript-eslint/consistent-type-imports
 /* eslint-disable @typescript-eslint/consistent-type-imports */
+import { Component, type OnInit } from '@angular/core';
 import {
     type Film,
     type FilmGenre,
     FilmReadService,
     FilmWriteService,
     FindError,
-    UpdateError,
     type Studio,
+    UpdateError,
 } from '../shared';
 /* eslint-enable @typescript-eslint/consistent-type-imports */
-import { Component, type OnInit } from '@angular/core';
+
 import { HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
 import { first, tap } from 'rxjs/operators';
 import { FormGroup } from '@angular/forms';
