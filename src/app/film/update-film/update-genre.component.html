@@ -1,12 +1,11 @@
 
 <div class="row">
-    <label class="col col-2 col-form-label gy-3">Art *</label>
-  
-    <div class="col col-10 gy-3" [formGroup]="updateForm">
-      <select class="form-select" formControlName="art">
-        <option value="LUSTIG">Lustig</option>
-        <option value="ACTION">Action</option>
-      </select>
-    </div>
+  <label class="col col-2 col-form-label gy-3">Genre *</label>
+
+  <div class="col col-10 gy-3" [formGroup]="updateForm">
+    <select class="form-select" formControlName="genre">
+      <option value="DRUCKAUSGABE">Druckausgabe</option>
+      <option value="KINDLE">Kindle</option>
+    </select>
   </div>
-  
+</div>
