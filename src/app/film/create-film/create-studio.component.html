@@ -1,29 +1,28 @@
 <div class="row">
-    <label class="col col-2 col-form-label gy-3">Studio *</label>
-    <div class="col col-10 gy-3" [formGroup]="createForm">
-      <div class="input-group">
-        <select
-          class="form-select"
-          formControlName="studio"
-          required
-          [class.is-invalid]="studio.invalid && studio.touched"
-          [class.is-valid]="studio.valid && studio.touched"
-        >
-          <option value="">Einen Studio ausw&auml;hlen</option>
-          <option value="DISNEY">Disney</option>
-          <option value="WARNER">Warner</option>
-        </select>
-  
-        <div
-          class="invalid-feedback"
-          *ngIf="studio.invalid && studio.touched && studio.errors"
-        >
-          <i class="material-icons">error</i>
-          <div *ngIf="studio.errors['required']">
-            <span class="ms-1"> Ein Studio ist erforderlich. </span>
-          </div>
+  <label class="col col-2 col-form-label gy-3">Studio *</label>
+  <div class="col col-10 gy-3" [formGroup]="createForm">
+    <div class="input-group">
+      <select
+        class="form-select"
+        formControlName="studio"
+        required
+        [class.is-invalid]="studio.invalid && studio.touched"
+        [class.is-valid]="studio.valid && studio.touched"
+      >
+        <option value="">Einen Studio ausw&auml;hlen</option>
+        <option value="DISNEY">Disney</option>
+        <option value="WARNER">Warner</option>
+      </select>
+
+      <div
+        class="invalid-feedback"
+        *ngIf="studio.invalid && studio.touched && studio.errors"
+      >
+        <i class="material-icons">error</i>
+        <div *ngIf="studio.errors['required']">
+          <span class="ms-1"> Ein Studio ist erforderlich. </span>
         </div>
       </div>
     </div>
   </div>
-  
+</div>
