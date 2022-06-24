@@ -1,6 +1,6 @@
 import { Component, Input, type OnInit } from '@angular/core';
 import { FormControl, type FormGroup, Validators } from '@angular/forms';
-import { type FilmGenre } from '../shared/buch';
+import { type FilmGenre } from '../shared/film';
 import log from 'loglevel';
 
 /**

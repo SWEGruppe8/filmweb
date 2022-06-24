@@ -57,7 +57,7 @@ import { environment } from '../environments/environment';
         HttpClientModule,
         LayoutModule,
         SharedModule,
-        // NICHT BuchModule wegen Lazy Loading
+        // NICHT FilmModule wegen Lazy Loading
     ],
 
     // Eigene Komponenten des Moduls oder Direktiven oder Pipes

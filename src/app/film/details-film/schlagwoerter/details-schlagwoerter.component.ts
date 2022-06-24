@@ -10,7 +10,7 @@ import log from 'loglevel';
     templateUrl: './details-schlagwoerter.component.html',
 })
 export class DetailsSchlagwoerterComponent implements OnInit {
-    // <hs-schlagwoerter [values]="buch.schlagwoerter">
+    // <hs-schlagwoerter [values]="film.schlagwoerter">
     // Decorator fuer ein Attribut. Siehe InputMetadata
     @Input()
     values!: string[];
