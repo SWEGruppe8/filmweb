@@ -10,7 +10,7 @@ import log from 'loglevel';
     selector: 'hs-create-studio',
     templateUrl: './create-studio.component.html',
 })
-export class CreateVerlagComponent implements OnInit {
+export class CreateStudioComponent implements OnInit {
     @Input()
     createForm!: FormGroup;
 

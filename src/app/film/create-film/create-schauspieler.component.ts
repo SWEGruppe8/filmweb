@@ -10,7 +10,7 @@ import log from 'loglevel';
     selector: 'hs-create-schauspieler',
     templateUrl: './create-schauspieler.component.html',
 })
-export class CreateSchlagwoerterComponent implements OnInit {
+export class CreateSchauspielerComponent implements OnInit {
     @Input()
     createForm!: FormGroup;
 
@@ -19,7 +19,7 @@ export class CreateSchlagwoerterComponent implements OnInit {
     readonly salma = new FormControl(false);
 
     ngOnInit() {
-        log.debug('CreateSchlagwoerterComponent.ngOnInit');
+        log.debug('CreateSchauspielerComponent.ngOnInit');
         // siehe formControlName innerhalb @Component({templateUrl: ...})
         this.createForm.addControl('leonardo', this.leonardo);
         this.createForm.addControl('salma', this.salma);
