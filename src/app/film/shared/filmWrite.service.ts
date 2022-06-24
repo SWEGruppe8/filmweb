@@ -109,8 +109,8 @@ export class FilmWriteService {
     update(film: Film): Observable<Film | UpdateError> {
         log.debug('FilmWriteService.update: film=', film);
 
-        // id, version und schlagwoerter gehoeren nicht zu den serverseitigen Nutzdaten
-        const { id, version, schlagwoerter, ...filmDTO } = film; // eslint-disable-line @typescript-eslint/no-unused-vars
+        // id, version und schauspieler gehoeren nicht zu den serverseitigen Nutzdaten
+        const { id, version, schauspieler, ...filmDTO } = film; // eslint-disable-line @typescript-eslint/no-unused-vars
         if (version === undefined) {
             const msg = `Keine Versionsnummer fuer das Film ${id}`;
             log.debug(msg);

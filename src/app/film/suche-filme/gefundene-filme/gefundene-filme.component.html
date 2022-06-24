@@ -43,10 +43,10 @@
             </span>
           </td>
           <td (click)="onClick(film)">
-            <span *ngFor="let schlagwort of film.schlagwoerter">
-              <span [ngSwitch]="schlagwort">
+            <span *ngFor="let schauspieler of film.schauspieler">
+              <span [ngSwitch]="schauspieler">
                 <span *ngSwitchCase="'SPANNED'"> Spanned<br /> </span>
-                <span *ngSwitchCase="'GRUSELIG'"> Gruselig </span>
+                <span *ngSwitchCase="'SALMA'"> Salma </span>
               </span>
             </span>
           </td>
