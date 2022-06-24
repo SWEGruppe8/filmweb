@@ -8,7 +8,7 @@
     "regisseur": 1,
     "lieferbar": true,
     "datum": "12345-123-123",
-    "isbn": "falsche-isbn",
+    "isan": "falsche-isan",
     "homepage": "anyHomepage",
     "schlagwoerter": ["SPANNED"]
   }

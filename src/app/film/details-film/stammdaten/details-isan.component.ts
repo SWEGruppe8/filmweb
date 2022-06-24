@@ -8,7 +8,7 @@ import log from 'loglevel';
     selector: 'hs-details-isan',
     templateUrl: './details-isan.component.html',
 })
-export class DetailsIsbnComponent implements OnInit {
+export class DetailsIsanComponent implements OnInit {
     @Input()
     isan!: string;
 
