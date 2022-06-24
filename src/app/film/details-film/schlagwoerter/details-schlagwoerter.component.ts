@@ -1,4 +1,3 @@
-
 import { Component, Input, type OnInit } from '@angular/core';
 import log from 'loglevel';
 

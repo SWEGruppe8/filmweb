@@ -4,7 +4,7 @@
     "art": "UNSICHTBAR",
     "verlag": "NO_VERLAG",
     "preis": -1,
-    "rabatt": 0,
+    "regisseur": 0,
     "lieferbar": true,
     "datum": "12345-123-123",
     "isbn": "falsche-isbn",

@@ -31,7 +31,7 @@ GET {{localHTTPS}}/rest/filme?titel=a
 GET {{localHTTPS}}/rest/filme?isbn=000-0-00000-000-1
 
 ### Suche mit vorhandenen Schlagwoertern
-GET {{localHTTPS}}/rest/filme?javascript=true&typescript=true
+GET {{localHTTPS}}/rest/filme?spannend=true&gruselig=true
 
 ### Suche mit gueltiger Filmart
 GET {{localHTTPS}}/rest/filme?art=KINDLE
