@@ -5,14 +5,14 @@ import log from 'loglevel';
  * Komponente f&uuml;r das Tag <code>hs-details-newsletter</code>
  */
 @Component({
-    selector: 'hs-details-lieferbar',
-    templateUrl: './details-lieferbar.component.html',
+    selector: 'hs-details-newsletter',
+    templateUrl: './details-newsletter.component.html',
 })
-export class DetailsLieferbarComponent implements OnInit {
+export class DetailsNewsletterComponent implements OnInit {
     @Input()
-    lieferbar: boolean | undefined;
+    newsletter: boolean | undefined;
 
     ngOnInit() {
-        log.debug('DetailsNewsletterComponent.lieferbar=', this.lieferbar);
+        log.debug('DetailsNewsletterComponent.newsletter=', this.newsletter);
     }
 }
