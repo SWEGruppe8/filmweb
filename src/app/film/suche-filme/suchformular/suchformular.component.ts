@@ -1,5 +1,5 @@
-import { type FilmGenre, type Studio } from '../../shared/film';
 import { Component, Output } from '@angular/core';
+import { type FilmGenre, type Studio } from '../../shared/film';
 import { Subject } from 'rxjs';
 import { type Suchkriterien } from '../../shared';
 import { fadeIn } from '../../../shared';
