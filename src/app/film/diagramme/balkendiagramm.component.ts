@@ -1,4 +1,3 @@
-
 import { type Film, FilmReadService, FindError } from '../shared'; // eslint-disable-line @typescript-eslint/consistent-type-imports
 import { Component, type OnInit } from '@angular/core';
 import { first, map, tap } from 'rxjs/operators';

@@ -1,16 +1,15 @@
 <div class="row mt-2">
-    <label class="col col-1"> Lieferbar </label>
-    <div class="col col-11">
-      <input
-        type="checkbox"
-        checked
-        disabled
-        class="checkbox"
-        *ngIf="lieferbar; else nichtLieferbar"
-      />
-      <ng-template #nichtLieferbar>
-        <input type="checkbox" disabled class="checkbox" />
-      </ng-template>
-    </div>
+  <label class="col col-1"> Lieferbar </label>
+  <div class="col col-11">
+    <input
+      type="checkbox"
+      checked
+      disabled
+      class="checkbox"
+      *ngIf="lieferbar; else nichtLieferbar"
+    />
+    <ng-template #nichtLieferbar>
+      <input type="checkbox" disabled class="checkbox" />
+    </ng-template>
   </div>
-  
+</div>

@@ -4,7 +4,6 @@
   <hs-waiting *ngIf="waiting; else showSuchergebnis"></hs-waiting>
 
   <ng-template #showSuchergebnis>
-    <hs-suchergebnis [filme]="filme" [errorMsg]="errorMsg">
-    </hs-suchergebnis>
+    <hs-suchergebnis [filme]="filme" [errorMsg]="errorMsg"> </hs-suchergebnis>
   </ng-template>
 </section>

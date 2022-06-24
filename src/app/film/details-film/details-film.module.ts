@@ -1,4 +1,3 @@
-
 import { DetailsBearbeitenComponent } from './details-bearbeiten.component';
 import { DetailsBreadcrumbsComponent } from './details-breadcrumbs.component';
 import { DetailsFilmComponent } from './details-film.component';

@@ -1,10 +1,7 @@
 <!-- Template Binding durch die Direktive ngIf -->
 <!-- Eine Direktive ist eine Komponente ohne View -->
 
-<hs-gefundene-filme
-  [filme]="filme"
-  *ngIf="filme.length; else showErrorMsg"
->
+<hs-gefundene-filme [filme]="filme" *ngIf="filme.length; else showErrorMsg">
 </hs-gefundene-filme>
 
 <ng-template #showErrorMsg>
