@@ -5,7 +5,10 @@ export const MAX_BEWERTUNG = 5;
 export type Studio = 'DISNEY' | 'WARNER';
 
 export type FilmGenre = 'ACTION' | 'COMEDY';
-
+export interface Regisseur {
+    nachname: string;
+    vorname: string;
+}
 export const ISAN_REGEX =
     // eslint-disable-next-line max-len
     /\d{3}-\d-\d{5}-\d{3}-\d|\d-\d{5}-\d{3}-\d|\d-\d{4}-\d{4}-\d|\d{3}-\d{10}|\d{13}/u;
@@ -23,7 +26,7 @@ export interface Film {
     studio: Studio | '' | undefined;
     release: Temporal.PlainDate | undefined;
     umsatz: number;
-    regisseur: number;
+    regisseur: Regisseur;
     newsletter: boolean | undefined;
     schauspieler: string[];
     isan: string;
@@ -41,7 +44,7 @@ export interface FilmShared {
     studio?: Studio | '';
     genre: FilmGenre;
     umsatz: number;
-    regisseur: number;
+    regisseur: Regisseur;
     newsletter?: boolean;
     isan: string;
 }

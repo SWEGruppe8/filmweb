@@ -1,9 +1,8 @@
 <div class="row mt-2">
-  <label class="col col-1"> regisseur </label>
-  <div class="col col-11">
-    <!-- {minIntegerDigits}.{minFractionDigits}-{maxFractionDigits} -->
-    <!-- default: 1.0-3 -->
-    <!-- siehe number_pipe.ts -->
-    {{ regisseur | percent: ".2" }}
-  </div>
+  <label class="col col-1"> PLZ </label>
+  <div class="col col-11">{{ regisseur.nachname }}</div>
+</div>
+<div class="row mt-2">
+  <label class="col col-1"> Ort </label>
+  <div class="col col-11">{{ regisseur.vorname }}</div>
 </div>

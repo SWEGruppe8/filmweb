@@ -14,6 +14,8 @@ export interface FilmForm extends FilmShared {
     release: Date;
     leonardo: boolean;
     salma: boolean;
+    nachname: string;
+    vorname: string;
 }
 
 /**
@@ -31,7 +33,8 @@ export const toFilm = (filmForm: FilmForm) => {
         studio,
         release,
         umsatz,
-        regisseur,
+        nachname,
+        vorname,
         newsletter,
         leonardo,
         salma,
@@ -46,8 +49,6 @@ export const toFilm = (filmForm: FilmForm) => {
         release.getDate(),
     );
     log.debug('toFilm: releaseTemporal=', releaseTemporal);
-
-    const regisseurNumber = regisseur === undefined ? 0 : regisseur / 100; // eslint-disable-line @typescript-eslint/no-magic-numbers
 
     const schauspieler: string[] = [];
     if (leonardo) {
@@ -64,7 +65,7 @@ export const toFilm = (filmForm: FilmForm) => {
         studio,
         release: releaseTemporal,
         umsatz,
-        regisseur: regisseurNumber,
+        regisseur: { nachname, vorname },
         newsletter,
         schauspieler,
         isan,

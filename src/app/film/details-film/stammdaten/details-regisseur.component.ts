@@ -1,4 +1,5 @@
 import { Component, Input, type OnInit } from '@angular/core';
+import { type Regisseur } from '../../shared/film';
 import log from 'loglevel';
 
 /**
@@ -10,7 +11,7 @@ import log from 'loglevel';
 })
 export class DetailsRegisseurComponent implements OnInit {
     @Input()
-    regisseur!: number | '';
+    regisseur!: Regisseur;
 
     ngOnInit() {
         log.debug('DetailsRegisseurComponent.regisseur=', this.regisseur);

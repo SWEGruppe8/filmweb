@@ -1,4 +1,5 @@
 import { type Film, type FilmShared } from './film';
+import type { Regisseur } from './film';
 import { Temporal } from '@js-temporal/polyfill';
 import log from 'loglevel';
 
@@ -19,6 +20,7 @@ export interface FilmServer extends FilmShared {
     bewertung?: number;
     release?: string;
     schauspieler?: string[];
+    regisseur: Regisseur;
     // eslint-disable-next-line @typescript-eslint/naming-convention
     _links?: {
         self: Link;
