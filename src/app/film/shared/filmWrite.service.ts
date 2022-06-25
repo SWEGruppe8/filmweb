@@ -28,7 +28,7 @@ import { toFilmServer } from './filmServer';
 // Die Anwendungslogik wird vom Controller an Service-Klassen delegiert.
 
 /**
- * Die Service-Klasse zu B&uuml;cher wird zum "Root Application Injector"
+ * Die Service-Klasse zu Filme wird zum "Root Application Injector"
  * hinzugefuegt und ist in allen Klassen der Webanwendung verfuegbar.
  */
 @Injectable({ providedIn: 'root' })

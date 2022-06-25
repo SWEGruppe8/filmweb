@@ -19,7 +19,7 @@ import log from 'loglevel';
 /**
  * Komponente f&uuml;r das Tag <code>hs-gefundene-filme</code>, um zun&auml;chst
  * das Warten und danach das Ergebnis der Suche anzuzeigen, d.h. die gefundenen
- * B&uuml;cher oder eine Fehlermeldung.
+ * Filme oder eine Fehlermeldung.
  */
 @Component({
     selector: 'hs-gefundene-filme',
@@ -75,8 +75,8 @@ export class GefundeneFilmeComponent implements OnInit {
     }
 
     /**
-     * Das ausgew&auml;hlte bzw. angeklickte Film in der Detailsseite anzeigen.
-     * @param film Das ausgew&auml;hlte Film
+     * Der ausgew&auml;hlte bzw. angeklickte Film in der Detailsseite anzeigen.
+     * @param film Der ausgew&auml;hlte Film
      */
     onClick(film: Film) {
         log.debug('GefundeneFilmeComponent.onClick: film=', film);
@@ -88,7 +88,7 @@ export class GefundeneFilmeComponent implements OnInit {
     }
 
     /**
-     * Das ausgew&auml;hlte bzw. angeklickte Film l&ouml;schen.
+     * Der ausgew&auml;hlte bzw. angeklickte Film l&ouml;schen.
      * @param film Das ausgew&auml;hlte Film
      */
     onRemove(film: Film) {
