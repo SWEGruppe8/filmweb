@@ -37,7 +37,7 @@ const routes: Routes = [
         // zzgl. Preloading von sichtbaren Links (s.u.)
         // https://angular.io/guide/lazy-loading-ngmodules
         loadChildren: () =>
-            import('./film/film-routing.module').then(m => m.filmRoutingModule),
+            import('./film/film-routing.module').then(m => m.FilmRoutingModule),
     },
 ];
 
