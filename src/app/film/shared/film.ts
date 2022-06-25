@@ -4,7 +4,7 @@ export const MAX_BEWERTUNG = 5;
 
 export type Studio = 'DISNEY' | 'WARNER';
 
-export type FilmGenre = 'ACTION' | 'LUSTIG';
+export type FilmGenre = 'ACTION' | 'COMEDY';
 
 export const ISAN_REGEX =
     // eslint-disable-next-line max-len
