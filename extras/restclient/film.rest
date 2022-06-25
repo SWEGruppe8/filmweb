@@ -33,14 +33,14 @@ GET {{localHTTPS}}/rest/filme?isan=000-0-00000-000-1
 ### Suche mit vorhandenen Schauspielern
 GET {{localHTTPS}}/rest/filme?leonardo=true&salma=true
 
-### Suche mit gueltiger Filmart
-GET {{localHTTPS}}/rest/filme?art=KINDLE
+### Suche mit gueltiger Filmgenre
+GET {{localHTTPS}}/rest/filme?genre=KINDLE
 
 ### Suche mit gueltigem Bewertung
 GET {{localHTTPS}}/rest/filme?bewertung=1
 
-### Suche lieferbare Filme
-GET {{localHTTPS}}/rest/filme?lieferbar=true
+### Suche Filme mit einem Newsletter
+GET {{localHTTPS}}/rest/filme?newsletter=true
 
 ### Neuen Film anlegen
 POST {{localHTTPS}}/rest/filme

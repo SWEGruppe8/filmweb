@@ -4,7 +4,7 @@ import log from 'loglevel';
 
 /**
  * Komponente mit dem Tag &lt;hs-create-newsletter&gt;, um das Erfassungsformular
- * f&uuml;r ein neues Buch zu realisieren.
+ * f&uuml;r einen neuen Film zu realisieren.
  */
 @Component({
     selector: 'hs-create-newsletter',
