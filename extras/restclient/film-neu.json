@@ -2,7 +2,7 @@
     "titel": "Test",
     "bewertung": 1,
     "genre": "COMEDY",
-    "verlag": "FOO_VERLAG",
+    "studio": "WARNER",
     "umsatz": 99.9,
     "regisseur": 0.1,
     "newsletter": true,
