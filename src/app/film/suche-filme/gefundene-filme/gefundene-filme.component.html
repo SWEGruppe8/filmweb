@@ -37,15 +37,15 @@
           <td (click)="onClick(film)">{{ film.titel }}</td>
           <td (click)="onClick(film)">
             <span [ngSwitch]="film.studio">
-              <span *ngSwitchCase="'FOO_STUDIO'">Foo Studio</span>
-              <span *ngSwitchCase="'BAR_STUDIO'">Bar Studio</span>
+              <span *ngSwitchCase="'WARNER'">Warner</span>
+              <span *ngSwitchCase="'DISNEY'">Disney</span>
               <span *ngSwitchDefault>unbekannt</span>
             </span>
           </td>
           <td (click)="onClick(film)">
             <span *ngFor="let schauspieler of film.schauspieler">
               <span [ngSwitch]="schauspieler">
-                <span *ngSwitchCase="'SPANNED'"> Spanned<br /> </span>
+                <span *ngSwitchCase="'LEONARDO'"> Leonardo <br /> </span>
                 <span *ngSwitchCase="'SALMA'"> Salma </span>
               </span>
             </span>
@@ -75,8 +75,8 @@
       <i class="material-icons">info</i>
       <span class="ms-1" [ngPlural]="filme.length">
         <!-- zu vergleichender Ausdruck -->
-        <ng-template ngPluralCase="=0"> Es gibt kein Film </ng-template>
-        <ng-template ngPluralCase="=1"> Es gibt ein Film </ng-template>
+        <ng-template ngPluralCase="=0"> Es gibt keinen Film </ng-template>
+        <ng-template ngPluralCase="=1"> Es gibt einen Film </ng-template>
         <ng-template ngPluralCase="other">
           Es gibt {{ filme.length }} Filme
         </ng-template>
