@@ -4,7 +4,7 @@ import log from 'loglevel';
 
 /**
  * Komponente f&uuml;r das Tag <code>hs-suchergebnis</code>, um das Ergebnis der
- * Suche anzuzeigen, d.h. die gefundenen B&uuml;cher oder eine Fehlermeldung.
+ * Suche anzuzeigen, d.h. die gefundenen Filme oder eine Fehlermeldung.
  */
 @Component({
     selector: 'hs-suchergebnis',

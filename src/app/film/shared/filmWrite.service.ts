@@ -28,7 +28,7 @@ import { toFilmServer } from './filmServer';
 // Die Anwendungslogik wird vom Controller an Service-Klassen delegiert.
 
 /**
- * Die Service-Klasse zu B&uuml;cher wird zum "Root Application Injector"
+ * Die Service-Klasse zu Filme wird zum "Root Application Injector"
  * hinzugefuegt und ist in allen Klassen der Webanwendung verfuegbar.
  */
 @Injectable({ providedIn: 'root' })
@@ -112,7 +112,7 @@ export class FilmWriteService {
         // id, version und schauspieler gehoeren nicht zu den serverseitigen Nutzdaten
         const { id, version, schauspieler, ...filmDTO } = film; // eslint-disable-line @typescript-eslint/no-unused-vars
         if (version === undefined) {
-            const msg = `Keine Versionsnummer fuer das Film ${id}`;
+            const msg = `Keine Versionsnummer fuer den Film ${id}`;
             log.debug(msg);
             return of(new UpdateError(-1, msg));
         }
