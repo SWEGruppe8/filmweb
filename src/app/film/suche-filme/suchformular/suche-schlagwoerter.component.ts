@@ -9,7 +9,7 @@ import log from 'loglevel';
     selector: 'hs-suche-schlagwoerter',
     templateUrl: './suche-schlagwoerter.component.html',
 })
-export class SucheSchlagwoerterrComponent {
+export class SucheSchlagwoerterComponent {
     spannend = false;
 
     gruselig = false;

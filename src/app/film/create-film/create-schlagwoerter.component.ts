@@ -19,7 +19,7 @@ export class CreateSchlagwoerterComponent implements OnInit {
     readonly gruselig = new FormControl(false);
 
     ngOnInit() {
-        log.debug('CreateSchlagwoerterrComponent.ngOnInit');
+        log.debug('CreateSchlagwoerterComponent.ngOnInit');
         // siehe formControlName innerhalb @Component({templateUrl: ...})
         this.createForm.addControl('spannend', this.spannend);
         this.createForm.addControl('gruselig', this.gruselig);
