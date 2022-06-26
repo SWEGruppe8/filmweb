@@ -10,7 +10,7 @@ import log from 'loglevel';
  * </ul>
  */
 export interface FilmForm extends FilmShared {
-    rating: string;
+    rating: number;
     datum: Date;
     spannend: boolean;
     gruselig: boolean;
@@ -31,9 +31,9 @@ export const toFilm = (filmForm: FilmForm) => {
         studio,
         datum,
         online,
+        homepage,
         spannend,
         gruselig,
-        homepage,
     } = filmForm;
 
     const ratingNumber = Number(rating);
@@ -58,10 +58,10 @@ export const toFilm = (filmForm: FilmForm) => {
         rating: ratingNumber,
         genre,
         studio,
-        datum: datumTemporal,
         online,
-        schlagwoerter,
+        datum: datumTemporal,
         homepage,
+        schlagwoerter,
         version: 0,
     };
     log.debug('toFilm: film=', film);

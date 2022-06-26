@@ -60,10 +60,10 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
         rating,
         genre,
         studio,
-        datum,
         online,
-        schlagwoerter,
+        datum,
         homepage,
+        schlagwoerter,
     } = filmServer;
 
     let datumTemporal: Temporal.PlainDate | undefined;
@@ -84,10 +84,10 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
         rating,
         genre,
         studio,
-        datum: datumTemporal,
         online,
-        schlagwoerter: schlagwoerter ?? [],
+        datum: datumTemporal,
         homepage,
+        schlagwoerter: schlagwoerter ?? [],
         version,
     };
     log.debug('Film.fromServer: film=', film);
@@ -106,9 +106,9 @@ export const toFilmServer = (film: Film): FilmServer => {
         rating: film.rating,
         genre: film.genre,
         studio: film.studio,
-        datum,
         online: film.online,
-        schlagwoerter: film.schlagwoerter,
+        datum,
         homepage: film.homepage,
+        schlagwoerter: film.schlagwoerter,
     };
 };
