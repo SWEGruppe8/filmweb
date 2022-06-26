@@ -12,6 +12,7 @@ import {
 } from '../shared';
 /* eslint-enable @typescript-eslint/consistent-type-imports */
 
+// eslint-disable-next-line import/no-unresolved
 import { HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
 import { first, tap } from 'rxjs/operators';
 import { FormGroup } from '@angular/forms';

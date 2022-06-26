@@ -6,6 +6,7 @@ import {
     type HttpErrorResponse,
     HttpParams,
     type HttpResponse,
+    // eslint-disable-next-line import/no-unresolved
 } from '@angular/common/http';
 import { type Observable, of } from 'rxjs';
 import { catchError, first, map } from 'rxjs/operators';

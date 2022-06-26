@@ -7,6 +7,7 @@ import {
     type Suchkriterien,
 } from '../shared';
 import { first, tap } from 'rxjs/operators';
+// eslint-disable-next-line import/no-unresolved
 import { HttpStatusCode } from '@angular/common/http';
 import { Title } from '@angular/platform-browser'; // eslint-disable-line @typescript-eslint/consistent-type-imports
 import log from 'loglevel';

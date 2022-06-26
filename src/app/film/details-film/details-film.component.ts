@@ -4,6 +4,7 @@ import { type Film, FilmReadService } from '../shared'; // eslint-disable-line @
 import { first, tap } from 'rxjs/operators';
 import { AuthService } from '../../auth/auth.service'; // eslint-disable-line @typescript-eslint/consistent-type-imports
 import { FindError } from '../shared/errors';
+// eslint-disable-next-line import/no-unresolved
 import { HttpStatusCode } from '@angular/common/http';
 import { type Observable } from 'rxjs';
 import { Title } from '@angular/platform-browser'; // eslint-disable-line @typescript-eslint/consistent-type-imports

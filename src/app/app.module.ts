@@ -18,9 +18,11 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+// eslint-disable-next-line import/no-unresolved
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { HomeModule } from './home/home.module';
+// eslint-disable-next-line import/no-unresolved
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from './layout/layout.module';
 import { ServiceWorkerModule } from '@angular/service-worker';

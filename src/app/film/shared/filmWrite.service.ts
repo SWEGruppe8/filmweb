@@ -1,8 +1,10 @@
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import {
     HttpClient,
     type HttpErrorResponse,
     HttpHeaders,
     HttpResponse,
+    // eslint-disable-next-line import/no-unresolved
 } from '@angular/common/http';
 import { type Observable, of } from 'rxjs';
 import { RemoveError, SaveError, UpdateError } from './errors';
