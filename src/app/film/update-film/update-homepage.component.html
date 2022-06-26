@@ -1,0 +1,31 @@
+<div class="row">
+  <label for="homepageUpdate" class="col col-2 col-form-label gy-3"> HOMEPAGE </label>
+
+  <div class="col col-10 gy-3" [formGroup]="updateForm">
+    <div class="input-group">
+      <input
+        id="homepageUpdate"
+        placeholder="HOMEPAGE"
+        class="form-control"
+        autofocus
+        formControlName="homepage"
+        [class.is-invalid]="homepage.invalid && homepage.dirty"
+        [class.is-valid]="homepage.valid && homepage.dirty"
+      />
+
+      <div
+        class="invalid-feedback"
+        *ngIf="homepage.invalid && homepage.touched && homepage.errors"
+      >
+        <i class="material-icons">error</i>
+        <span
+          class="ms-1"
+          *ngIf="homepage.errors['required'] || homepage.errors['pattern']"
+        >
+          Eine g&uuml;ltige Homepage, z.B. 3-89722-583-2, muss eingegeben
+          werden.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

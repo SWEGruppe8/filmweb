@@ -5,10 +5,7 @@ export const MAX_RATING = 5;
 export type Studio = 'DISNEY' | 'WARNER';
 
 export type FilmGenre = 'ACTION' | 'COMEDY';
-export const ISAN_REGEX =
-    // eslint-disable-next-line max-len
-    /\d{3}-\d-\d{5}-\d{3}-\d|\d-\d{5}-\d{3}-\d|\d-\d{4}-\d{4}-\d|\d{3}-\d{10}|\d{13}/u;
-
+export const HOMEPAGE_REGEX = /@.*?\./u;
 /**
  * Model als Plain-Old-JavaScript-Object (POJO) fuer die Daten *UND*
  * Functions fuer Abfragen und Aenderungen.
@@ -23,7 +20,7 @@ export interface Film {
     datum: Temporal.PlainDate | undefined;
     online: boolean | undefined;
     schlagwoerter: string[];
-    isan: string;
+    homepage: string;
 }
 
 /**
@@ -38,5 +35,5 @@ export interface FilmShared {
     studio?: Studio | '';
     genre: FilmGenre;
     online?: boolean;
-    isan: string;
+    homepage: string;
 }

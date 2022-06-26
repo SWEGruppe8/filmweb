@@ -3,7 +3,7 @@ export {
     type Film,
     type FilmShared,
     type Studio,
-    ISAN_REGEX,
+    HOMEPAGE_REGEX,
     MAX_RATING,
 } from './film';
 export {

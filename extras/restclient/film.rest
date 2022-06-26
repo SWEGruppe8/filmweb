@@ -28,7 +28,7 @@ GET {{localHTTPS}}/rest/filme/99999999-9999-9999-9999-999999999999
 GET {{localHTTPS}}/rest/filme?titel=a
 
 ### Suche mit vorhandener ISAN-Nummber
-GET {{localHTTPS}}/rest/filme?isan=000-0-00000-000-1
+GET {{localHTTPS}}/rest/filme?homepage=000-0-00000-000-1
 
 ### Suche mit vorhandenen Schlagwoertern
 GET {{localHTTPS}}/rest/filme?spannend=true&gruselig=true

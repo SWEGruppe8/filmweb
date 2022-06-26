@@ -1,6 +1,6 @@
 import { DetailsDatumComponent } from './details-datum.component';
 import { DetailsGenreComponent } from './details-genre.component';
-import { DetailsIsanComponent } from './details-isan.component';
+import { DetailsHomepageComponent } from './details-homepage.component';
 import { DetailsOnlineComponent } from './details-online.component';
 import { DetailsRatingComponent } from './details-rating.component';
 import { DetailsStammdatenComponent } from './details-stammdaten.component';
@@ -14,7 +14,7 @@ import { SharedModule } from '../../../shared/shared.module';
     declarations: [
         DetailsDatumComponent,
         DetailsGenreComponent,
-        DetailsIsanComponent,
+        DetailsHomepageComponent,
         DetailsOnlineComponent,
         DetailsRatingComponent,
         DetailsStammdatenComponent,

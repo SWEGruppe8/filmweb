@@ -33,7 +33,7 @@ export const toFilm = (filmForm: FilmForm) => {
         online,
         spannend,
         gruselig,
-        isan,
+        homepage,
     } = filmForm;
 
     const ratingNumber = Number(rating);
@@ -61,7 +61,7 @@ export const toFilm = (filmForm: FilmForm) => {
         datum: datumTemporal,
         online,
         schlagwoerter,
-        isan,
+        homepage,
         version: 0,
     };
     log.debug('toFilm: film=', film);
