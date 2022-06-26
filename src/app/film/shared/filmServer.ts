@@ -18,7 +18,7 @@ interface Link {
  */
 export interface FilmServer extends FilmShared {
     rating?: number;
-    release?: string;
+    datum?: string;
     schlagwoerter?: string[];
     regisseur: Regisseur;
     // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -62,23 +62,23 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
         rating,
         genre,
         studio,
-        release,
+        datum,
         regisseur,
         newsletter,
         schlagwoerter,
         isan,
     } = filmServer;
 
-    let releaseTemporal: Temporal.PlainDate | undefined;
+    let datumTemporal: Temporal.PlainDate | undefined;
     // TODO Parsing, ob der Datum-String valide ist
-    if (release !== undefined) {
-        const [yearStr, monthStr, dayStr] = release
+    if (datum !== undefined) {
+        const [yearStr, monthStr, dayStr] = datum
             .replace(/T.*/gu, '')
             .split('-');
         const year = Number(yearStr);
         const month = Number(monthStr);
         const day = Number(dayStr);
-        releaseTemporal = new Temporal.PlainDate(year, month, day);
+        datumTemporal = new Temporal.PlainDate(year, month, day);
     }
 
     const film: Film = {
@@ -87,7 +87,7 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
         rating,
         genre,
         studio,
-        release: releaseTemporal,
+        datum: datumTemporal,
         regisseur,
         newsletter,
         schlagwoerter: schlagwoerter ?? [],
@@ -104,14 +104,13 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
  * @return Das JSON-Objekt f&uuml;r den RESTful Web Service
  */
 export const toFilmServer = (film: Film): FilmServer => {
-    const release =
-        film.release === undefined ? undefined : film.release.toString();
+    const datum = film.datum === undefined ? undefined : film.datum.toString();
     return {
         titel: film.titel,
         rating: film.rating,
         genre: film.genre,
         studio: film.studio,
-        release,
+        datum,
         regisseur: film.regisseur,
         newsletter: film.newsletter,
         schlagwoerter: film.schlagwoerter,

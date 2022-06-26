@@ -1,6 +1,6 @@
 import { type Temporal } from '@js-temporal/polyfill';
 
-export const MAX_BEWERTUNG = 5;
+export const MAX_RATING = 5;
 
 export type Studio = 'DISNEY' | 'WARNER';
 
@@ -24,7 +24,7 @@ export interface Film {
     rating: number | undefined;
     genre: FilmGenre;
     studio: Studio | '' | undefined;
-    release: Temporal.PlainDate | undefined;
+    datum: Temporal.PlainDate | undefined;
     regisseur: Regisseur;
     newsletter: boolean | undefined;
     schlagwoerter: string[];

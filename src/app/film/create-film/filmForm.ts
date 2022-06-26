@@ -11,7 +11,7 @@ import log from 'loglevel';
  */
 export interface FilmForm extends FilmShared {
     rating: string;
-    release: Date;
+    datum: Date;
     spannend: boolean;
     gruselig: boolean;
 }
@@ -29,7 +29,7 @@ export const toFilm = (filmForm: FilmForm) => {
         rating,
         genre,
         studio,
-        release,
+        datum,
         newsletter,
         spannend,
         gruselig,
@@ -38,12 +38,12 @@ export const toFilm = (filmForm: FilmForm) => {
 
     const ratingNumber = Number(rating);
 
-    const releaseTemporal = new Temporal.PlainDate(
-        release.getFullYear(),
-        release.getMonth() + 1,
-        release.getDate(),
+    const datumTemporal = new Temporal.PlainDate(
+        datum.getFullYear(),
+        datum.getMonth() + 1,
+        datum.getDate(),
     );
-    log.debug('toFilm: releaseTemporal=', releaseTemporal);
+    log.debug('toFilm: datumTemporal=', datumTemporal);
 
     const schlagwoerter: string[] = [];
     if (spannend) {
@@ -58,7 +58,7 @@ export const toFilm = (filmForm: FilmForm) => {
         rating: ratingNumber,
         genre,
         studio,
-        release: releaseTemporal,
+        datum: datumTemporal,
         newsletter,
         schlagwoerter,
         isan,

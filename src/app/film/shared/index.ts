@@ -4,7 +4,7 @@ export {
     type FilmShared,
     type Studio,
     ISAN_REGEX,
-    MAX_BEWERTUNG,
+    MAX_RATING,
 } from './film';
 export {
     FilmReadService,
