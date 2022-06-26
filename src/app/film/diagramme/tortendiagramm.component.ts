@@ -44,7 +44,7 @@ export class TortendiagrammComponent implements OnInit {
                     }
 
                     return result
-                        .filter(film => film.rating!== undefined)
+                        .filter(film => film.rating !== undefined)
                         .map(film => this.#toDataItem(film));
                 }),
                 tap(dataItems => {
