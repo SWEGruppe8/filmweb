@@ -47,8 +47,8 @@ export class LiniendiagrammComponent implements OnInit {
                 }),
                 tap(filmItems => {
                     const bewertungItems = this.#getBewertungItems(filmItems);
-                    const umsatzItems = this.#getUmsatzItems(filmItems);
-                    this.#initSeries(bewertungItems, umsatzItems);
+                    const datumItems = this.#getDatumItems(filmItems);
+                    this.#initSeries(bewertungItems, datumItems);
                 }),
             )
             .subscribe();
@@ -65,25 +65,25 @@ export class LiniendiagrammComponent implements OnInit {
         });
     }
 
-    #getUmsatzItems(filme: Film[]): DataItem[] {
+    #getDatumItems(filme: Film[]): DataItem[] {
         // eslint-disable-next-line arrow-body-style
         return filme.map(film => {
             return {
                 name: film.id!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
-                value: film.umsatz,
+                value: film.datum,
             };
         });
     }
 
-    #initSeries(bewertungItems: DataItem[], umsatzItems: DataItem[]) {
+    #initSeries(bewertungItems: DataItem[], datumItems: DataItem[]) {
         const series: MultiSeries = [
             {
                 name: 'Bewertungen',
                 series: bewertungItems,
             },
             {
-                name: 'Umsatz',
-                series: umsatzItems,
+                name: 'Datum',
+                series: datumItems,
             },
         ];
 

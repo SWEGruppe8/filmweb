@@ -9,7 +9,6 @@ import { CreateReleaseComponent } from './create-release.component';
 import { CreateSchlagwoerterComponent } from './create-schlagwoerter.component';
 import { CreateStudioComponent } from './create-studio.component';
 import { CreateTitelComponent } from './create-titel.component';
-import { CreateUmsatzComponent } from './create-umsatz.component';
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { Title } from '@angular/platform-browser';
@@ -38,7 +37,6 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
         CreateSchlagwoerterComponent,
         CreateStudioComponent,
         CreateTitelComponent,
-        CreateUmsatzComponent,
     ],
     providers: [Title],
 })

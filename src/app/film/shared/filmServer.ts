@@ -37,7 +37,6 @@ export interface FilmServer extends FilmShared {
  * @param film JSON-Objekt mit Daten vom RESTful Web Server
  * @return Das initialisierte Film-Objekt
  */
-// eslint-disable-next-line max-lines-per-function
 export const toFilm = (filmServer: FilmServer, etag?: string) => {
     let selfLink: string | undefined;
     const { _links } = filmServer; // eslint-disable-line @typescript-eslint/naming-convention
@@ -64,7 +63,6 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
         genre,
         studio,
         release,
-        umsatz,
         regisseur,
         newsletter,
         schlagwoerter,
@@ -90,7 +88,6 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
         genre,
         studio,
         release: releaseTemporal,
-        umsatz,
         regisseur,
         newsletter,
         schlagwoerter: schlagwoerter ?? [],
@@ -115,7 +112,6 @@ export const toFilmServer = (film: Film): FilmServer => {
         genre: film.genre,
         studio: film.studio,
         release,
-        umsatz: film.umsatz,
         regisseur: film.regisseur,
         newsletter: film.newsletter,
         schlagwoerter: film.schlagwoerter,
