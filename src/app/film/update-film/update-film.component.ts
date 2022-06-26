@@ -77,7 +77,7 @@ export class UpdateFilmComponent implements OnInit {
             studio: Studio | '' | undefined;
         };
         const { rating } = this.updateForm.value as { rating: number };
-        const { isan } = this.updateForm.value as { isan: string };
+        const { homepage } = this.updateForm.value as { homepage: string };
 
         const { film, service } = this;
 
@@ -86,7 +86,7 @@ export class UpdateFilmComponent implements OnInit {
         film.genre = genre;
         film.studio = studio;
         film.rating = rating;
-        film.isan = isan;
+        film.homepage = homepage;
         log.debug('UpdateFilmComponent.onSubmit: film=', film);
 
         service

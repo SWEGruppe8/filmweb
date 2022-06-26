@@ -2,7 +2,7 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { CreateDatumComponent } from './create-datum.component';
 import { CreateFilmComponent } from './create-film.component';
 import { CreateGenreComponent } from './create-genre.component';
-import { CreateIsanComponent } from './create-isan.component';
+import { CreateHomepageComponent } from './create-homepage.component';
 import { CreateOnlineComponent } from './create-online.component';
 import { CreateRatingComponent } from './create-rating.component';
 import { CreateSchlagwoerterComponent } from './create-schlagwoerter.component';
@@ -29,7 +29,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
         CreateDatumComponent,
         CreateFilmComponent,
         CreateGenreComponent,
-        CreateIsanComponent,
+        CreateHomepageComponent,
         CreateOnlineComponent,
         CreateRatingComponent,
         CreateSchlagwoerterComponent,

@@ -3,7 +3,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { Title } from '@angular/platform-browser';
 import { UpdateFilmComponent } from './update-film.component';
 import { UpdateGenreComponent } from './update-genre.component';
-import { UpdateIsanComponent } from './update-isan.component';
+import { UpdateHomepageComponent } from './update-homepage.component';
 import { UpdateRatingComponent } from './update-rating.component';
 import { UpdateStudioComponent } from './update-studio.component';
 import { UpdateTitelComponent } from './update-titel.component';
@@ -13,7 +13,7 @@ import { UpdateTitelComponent } from './update-titel.component';
     declarations: [
         UpdateFilmComponent,
         UpdateGenreComponent,
-        UpdateIsanComponent,
+        UpdateHomepageComponent,
         UpdateRatingComponent,
         UpdateStudioComponent,
         UpdateTitelComponent,
