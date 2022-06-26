@@ -5,6 +5,7 @@ import { first, map, tap } from 'rxjs/operators';
 import { KeineFilmeError } from './errors';
 import { Title } from '@angular/platform-browser'; // eslint-disable-line @typescript-eslint/consistent-type-imports
 import log from 'loglevel';
+import { setDate } from 'date-fns';
 
 /**
  * Komponente mit dem Tag &lt;hs-liniendiagramm&gt; zur Visualisierung
@@ -70,7 +71,7 @@ export class LiniendiagrammComponent implements OnInit {
         return filme.map(film => {
             return {
                 name: film.id!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
-                value: film.datum,
+                value: Date.now(),
             };
         });
     }
