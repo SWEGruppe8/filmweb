@@ -1,14 +1,14 @@
 <div class="row mt-2">
-  <label class="col col-1"> Newsletter </label>
+  <label class="col col-1"> Online </label>
   <div class="col col-11">
     <input
       type="checkbox"
       checked
       disabled
       class="checkbox"
-      *ngIf="newsletter; else nichtNewsletter"
+      *ngIf="online; else nichtOnline"
     />
-    <ng-template #nichtNewsletter>
+    <ng-template #nichtOnline>
       <input type="checkbox" disabled class="checkbox" />
     </ng-template>
   </div>

@@ -39,8 +39,8 @@ GET {{localHTTPS}}/rest/filme?genre=KINDLE
 ### Suche mit gueltigem Rating 
 GET {{localHTTPS}}/rest/filme?rating=1
 
-### Suche Filme mit einem Newsletter
-GET {{localHTTPS}}/rest/filme?newsletter=true
+### Suche Filme mit einem Online-Service
+GET {{localHTTPS}}/rest/filme?online=true
 
 ### Neuen Film anlegen
 POST {{localHTTPS}}/rest/filme

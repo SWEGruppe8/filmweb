@@ -3,7 +3,7 @@
     "rating": 2,
     "genre": "ROMANCE",
     "studio": "NO_STUDIO",
-    "newsletter": true,
+    "online": true,
     "datum": "12345-123-123",
     "isan": "falsche-isan",
     "homepage": "anyHomepage"

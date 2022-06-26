@@ -4,7 +4,7 @@
     "rating": 5,
     "genre": "COMEDY",
     "studio": "IWI_STUDIO",
-    "newsletter": true,
+    "online": true,
     "datum": "12345-123-123",
     "isan": "falsche-isan",
     "homepage": "anyHomepage",

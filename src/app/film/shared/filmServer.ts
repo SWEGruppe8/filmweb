@@ -61,7 +61,7 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
         genre,
         studio,
         datum,
-        newsletter,
+        online,
         schlagwoerter,
         isan,
     } = filmServer;
@@ -85,7 +85,7 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
         genre,
         studio,
         datum: datumTemporal,
-        newsletter,
+        online,
         schlagwoerter: schlagwoerter ?? [],
         isan,
         version,
@@ -107,7 +107,7 @@ export const toFilmServer = (film: Film): FilmServer => {
         genre: film.genre,
         studio: film.studio,
         datum,
-        newsletter: film.newsletter,
+        online: film.online,
         schlagwoerter: film.schlagwoerter,
         isan: film.isan,
     };

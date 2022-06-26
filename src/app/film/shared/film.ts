@@ -21,7 +21,7 @@ export interface Film {
     genre: FilmGenre;
     studio: Studio | '' | undefined;
     datum: Temporal.PlainDate | undefined;
-    newsletter: boolean | undefined;
+    online: boolean | undefined;
     schlagwoerter: string[];
     isan: string;
 }
@@ -37,6 +37,6 @@ export interface FilmShared {
     titel: string | undefined;
     studio?: Studio | '';
     genre: FilmGenre;
-    newsletter?: boolean;
+    online?: boolean;
     isan: string;
 }
