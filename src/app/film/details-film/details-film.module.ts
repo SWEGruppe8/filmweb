@@ -8,7 +8,11 @@ import { SharedModule } from '../../shared/shared.module';
 import { Title } from '@angular/platform-browser';
 
 @NgModule({
-    imports: [DetailsSchlagwoerterModule, DetailsStammdatenModule, SharedModule],
+    imports: [
+        DetailsSchlagwoerterModule,
+        DetailsStammdatenModule,
+        SharedModule,
+    ],
     declarations: [
         DetailsBearbeitenComponent,
         DetailsBreadcrumbsComponent,
