@@ -91,7 +91,7 @@ export class SucheFilmeComponent implements OnInit {
 
         switch (statuscode) {
             case HttpStatusCode.NotFound:
-                this.errorMsg = 'Keine Bücher gefunden.';
+                this.errorMsg = 'Keine Filme gefunden.';
                 break;
             case HttpStatusCode.TooManyRequests:
                 this.errorMsg =
