@@ -10,11 +10,11 @@ import log from 'loglevel';
     selector: 'hs-create-rating',
     templateUrl: './create-rating.component.html',
 })
-export class CreateRating Component implements OnInit {
+export class CreateRatingComponent implements OnInit {
     @Input()
     createForm!: FormGroup;
 
-    readonly rating= new FormControl(undefined);
+    readonly rating = new FormControl(undefined);
 
     ngOnInit() {
         log.debug('CreateRating Component.ngOnInit');

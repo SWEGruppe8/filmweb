@@ -1,10 +1,9 @@
 import { CalendarModule, DateAdapter } from 'angular-calendar';
-import { CreateRating Component } from './create-rating.component';
 import { CreateFilmComponent } from './create-film.component';
 import { CreateGenreComponent } from './create-genre.component';
 import { CreateIsanComponent } from './create-isan.component';
 import { CreateNewsletterComponent } from './create-newsletter.component';
-import { CreateRegisseurComponent } from './create-regisseur.component';
+import { CreateRatingComponent } from './create-rating.component';
 import { CreateReleaseComponent } from './create-release.component';
 import { CreateSchlagwoerterComponent } from './create-schlagwoerter.component';
 import { CreateStudioComponent } from './create-studio.component';
@@ -27,12 +26,11 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
         SharedModule,
     ],
     declarations: [
-        CreateRating Component,
         CreateFilmComponent,
         CreateGenreComponent,
         CreateIsanComponent,
         CreateNewsletterComponent,
-        CreateRegisseurComponent,
+        CreateRatingComponent,
         CreateReleaseComponent,
         CreateSchlagwoerterComponent,
         CreateStudioComponent,

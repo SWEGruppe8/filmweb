@@ -1,4 +1,3 @@
-import type { Regisseur } from './film';
 import { type Film, type FilmGenre, type Studio } from './film';
 import { type FilmServer, toFilm } from './filmServer';
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
@@ -19,7 +18,6 @@ export interface Suchkriterien {
     titel: string;
     studio: Studio | '';
     genre: FilmGenre | '';
-    // regisseur: Regisseur | { nachname: ''; vorname: '' };
     schlagwoerter: { spannend: boolean; gruselig: boolean };
 }
 

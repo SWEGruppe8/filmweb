@@ -43,12 +43,12 @@ export class LiniendiagrammComponent implements OnInit {
                         throw new KeineFilmeError();
                     }
 
-                    return result.filter(film => film.rating!== undefined);
+                    return result.filter(film => film.rating !== undefined);
                 }),
                 tap(filmItems => {
-                    const bewertungItems = this.#getRatingItems(filmItems);
-                    const umsatzItems = this.#getUmsatzItems(filmItems);
-                    this.#initSeries(ratingItems, umsatzItems);
+                    const ratingItems = this.#getRatingItems(filmItems);
+                    const datumItems = this.#getDatumItems(filmItems);
+                    this.#initSeries(ratingItems, datumItems);
                 }),
             )
             .subscribe();
@@ -75,7 +75,7 @@ export class LiniendiagrammComponent implements OnInit {
         });
     }
 
-    #initSeries(ratingItems: DataItem[], umsatzItems: DataItem[]) {
+    #initSeries(ratingItems: DataItem[], datumItems: DataItem[]) {
         const series: MultiSeries = [
             {
                 name: 'Rating',
