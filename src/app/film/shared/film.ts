@@ -5,9 +5,7 @@ export const MAX_RATING = 5;
 export type Studio = 'DISNEY' | 'WARNER';
 
 export type FilmGenre = 'ACTION' | 'COMEDY';
-export const HOMEPAGE_REGEX =
-    // eslint-disable-next-line max-len
-    /https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,}/u;
+export const HOMEPAGE_REGEX = /@.*?\./u;
 /**
  * Model als Plain-Old-JavaScript-Object (POJO) fuer die Daten *UND*
  * Functions fuer Abfragen und Aenderungen.
@@ -19,10 +17,10 @@ export interface Film {
     rating: number | undefined;
     genre: FilmGenre;
     studio: Studio | '' | undefined;
-    datum: Temporal.PlainDate | undefined;
     online: boolean | undefined;
-    schlagwoerter: string[];
+    datum: Temporal.PlainDate | undefined;
     homepage: string;
+    schlagwoerter: string[];
 }
 
 /**
