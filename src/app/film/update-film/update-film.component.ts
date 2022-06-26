@@ -81,7 +81,7 @@ export class UpdateFilmComponent implements OnInit {
 
         const { film, service } = this;
 
-        // datum und regisseur koennen im Formular nicht geaendert werden
+        // datum kann im Formular nicht geaendert werden
         film.titel = titel;
         film.genre = genre;
         film.studio = studio;

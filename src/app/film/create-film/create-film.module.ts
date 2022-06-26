@@ -5,7 +5,6 @@ import { CreateGenreComponent } from './create-genre.component';
 import { CreateIsanComponent } from './create-isan.component';
 import { CreateNewsletterComponent } from './create-newsletter.component';
 import { CreateRatingComponent } from './create-rating.component';
-import { CreateRegisseurComponent } from './create-regisseur.component';
 import { CreateSchlagwoerterComponent } from './create-schlagwoerter.component';
 import { CreateStudioComponent } from './create-studio.component';
 import { CreateTitelComponent } from './create-titel.component';
@@ -33,7 +32,6 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
         CreateIsanComponent,
         CreateNewsletterComponent,
         CreateRatingComponent,
-        CreateRegisseurComponent,
         CreateSchlagwoerterComponent,
         CreateStudioComponent,
         CreateTitelComponent,
