@@ -47,8 +47,8 @@ export class LiniendiagrammComponent implements OnInit {
                 }),
                 tap(filmItems => {
                     const ratingItems = this.#getRatingItems(filmItems);
-                    const umsatzItems = this.#getUmsatzItems(filmItems);
-                    this.#initSeries(ratingItems, umsatzItems);
+                    const datumItems = this.#getDatumItems(filmItems);
+                    this.#initSeries(ratingItems, datumItems);
                 }),
             )
             .subscribe();
@@ -75,7 +75,7 @@ export class LiniendiagrammComponent implements OnInit {
         });
     }
 
-    #initSeries(ratingItems: DataItem[], umsatzItems: DataItem[]) {
+    #initSeries(ratingItems: DataItem[], datumItems: DataItem[]) {
         const series: MultiSeries = [
             {
                 name: 'Rating',
