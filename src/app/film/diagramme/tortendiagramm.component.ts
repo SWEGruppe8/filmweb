@@ -1,5 +1,5 @@
-import { type Film, FilmReadService, FindError } from '../shared'; // eslint-disable-line @typescript-eslint/consistent-type-imports
 import { Component, type OnInit } from '@angular/core';
+import { type Film, FilmReadService, FindError } from '../shared'; // eslint-disable-line @typescript-eslint/consistent-type-imports
 import { first, map, tap } from 'rxjs/operators';
 import { type DataItem } from '@swimlane/ngx-charts';
 import { KeineFilmeError } from './errors';

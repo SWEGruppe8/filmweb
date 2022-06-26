@@ -55,16 +55,8 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
         version = Number.parseInt(versionStr, 10);
     }
 
-    const {
-        titel,
-        rating,
-        genre,
-        studio,
-        datum,
-        online,
-        schlagwoerter,
-        isan,
-    } = filmServer;
+    const { titel, rating, genre, studio, datum, online, schlagwoerter, isan } =
+        filmServer;
 
     let datumTemporal: Temporal.PlainDate | undefined;
     // TODO Parsing, ob der Datum-String valide ist
