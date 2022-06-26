@@ -20,7 +20,7 @@ export interface Suchkriterien {
     studio: Studio | '';
     genre: FilmGenre | '';
     // regisseur: Regisseur | { nachname: ''; vorname: '' };
-    schauspieler: { leonardo: boolean; salma: boolean };
+    schlagwoerter: { spannend: boolean; gruselig: boolean };
 }
 
 export interface FilmeServer {
@@ -218,8 +218,8 @@ export class FilmReadService {
             return httpParams;
         }
 
-        const { titel, studio, genre, schauspieler } = suchkriterien;
-        const { leonardo, salma } = schauspieler;
+        const { titel, studio, genre, schlagwoerter } = suchkriterien;
+        const { spannend, gruselig } = schlagwoerter;
 
         if (titel !== '') {
             httpParams = httpParams.set('titel', titel);
@@ -230,11 +230,11 @@ export class FilmReadService {
         if (studio !== '') {
             httpParams = httpParams.set('studio', studio);
         }
-        if (leonardo) {
-            httpParams = httpParams.set('leonardo', 'true');
+        if (spannend) {
+            httpParams = httpParams.set('spannend', 'true');
         }
-        if (salma) {
-            httpParams = httpParams.set('salma', 'true');
+        if (gruselig) {
+            httpParams = httpParams.set('gruselig', 'true');
         }
         return httpParams;
     }

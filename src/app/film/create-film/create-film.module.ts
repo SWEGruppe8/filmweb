@@ -6,10 +6,9 @@ import { CreateIsanComponent } from './create-isan.component';
 import { CreateNewsletterComponent } from './create-newsletter.component';
 import { CreateRegisseurComponent } from './create-regisseur.component';
 import { CreateReleaseComponent } from './create-release.component';
-import { CreateSchauspielerComponent } from './create-schauspieler.component';
+import { CreateSchlagwoerterComponent } from './create-schlagwoerter.component';
 import { CreateStudioComponent } from './create-studio.component';
 import { CreateTitelComponent } from './create-titel.component';
-import { CreateUmsatzComponent } from './create-umsatz.component';
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { Title } from '@angular/platform-browser';
@@ -35,10 +34,9 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
         CreateNewsletterComponent,
         CreateRegisseurComponent,
         CreateReleaseComponent,
-        CreateSchauspielerComponent,
+        CreateSchlagwoerterComponent,
         CreateStudioComponent,
         CreateTitelComponent,
-        CreateUmsatzComponent,
     ],
     providers: [Title],
 })

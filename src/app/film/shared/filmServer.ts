@@ -19,7 +19,7 @@ interface Link {
 export interface FilmServer extends FilmShared {
     bewertung?: number;
     release?: string;
-    schauspieler?: string[];
+    schlagwoerter?: string[];
     regisseur: Regisseur;
     // eslint-disable-next-line @typescript-eslint/naming-convention
     _links?: {
@@ -37,7 +37,6 @@ export interface FilmServer extends FilmShared {
  * @param film JSON-Objekt mit Daten vom RESTful Web Server
  * @return Das initialisierte Film-Objekt
  */
-// eslint-disable-next-line max-lines-per-function
 export const toFilm = (filmServer: FilmServer, etag?: string) => {
     let selfLink: string | undefined;
     const { _links } = filmServer; // eslint-disable-line @typescript-eslint/naming-convention
@@ -64,10 +63,9 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
         genre,
         studio,
         release,
-        umsatz,
         regisseur,
         newsletter,
-        schauspieler,
+        schlagwoerter,
         isan,
     } = filmServer;
 
@@ -90,10 +88,9 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
         genre,
         studio,
         release: releaseTemporal,
-        umsatz,
         regisseur,
         newsletter,
-        schauspieler: schauspieler ?? [],
+        schlagwoerter: schlagwoerter ?? [],
         isan,
         version,
     };
@@ -115,10 +112,9 @@ export const toFilmServer = (film: Film): FilmServer => {
         genre: film.genre,
         studio: film.studio,
         release,
-        umsatz: film.umsatz,
         regisseur: film.regisseur,
         newsletter: film.newsletter,
-        schauspieler: film.schauspieler,
+        schlagwoerter: film.schlagwoerter,
         isan: film.isan,
     };
 };

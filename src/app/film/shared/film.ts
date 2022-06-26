@@ -25,10 +25,9 @@ export interface Film {
     genre: FilmGenre;
     studio: Studio | '' | undefined;
     release: Temporal.PlainDate | undefined;
-    umsatz: number;
     regisseur: Regisseur;
     newsletter: boolean | undefined;
-    schauspieler: string[];
+    schlagwoerter: string[];
     isan: string;
 }
 
@@ -43,7 +42,6 @@ export interface FilmShared {
     titel: string | undefined;
     studio?: Studio | '';
     genre: FilmGenre;
-    umsatz: number;
     regisseur: Regisseur;
     newsletter?: boolean;
     isan: string;
