@@ -43,10 +43,10 @@ export class LiniendiagrammComponent implements OnInit {
                         throw new KeineFilmeError();
                     }
 
-                    return result.filter(film => film.rating!== undefined);
+                    return result.filter(film => film.rating !== undefined);
                 }),
                 tap(filmItems => {
-                    const bewertungItems = this.#getRatingItems(filmItems);
+                    const ratingItems = this.#getRatingItems(filmItems);
                     const umsatzItems = this.#getUmsatzItems(filmItems);
                     this.#initSeries(ratingItems, umsatzItems);
                 }),
