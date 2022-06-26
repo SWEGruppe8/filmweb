@@ -57,7 +57,7 @@ export class TortendiagrammComponent implements OnInit {
     // https://stackblitz.com/edit/swimlane-pie-chart?embed=1&file=app/app.component.ts
     #toDataItem(film: Film): DataItem {
         return {
-            name: film.titel!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
+            name: film.titel,
             value: film.rating!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
         };
     }
