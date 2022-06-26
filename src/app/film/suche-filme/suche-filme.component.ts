@@ -1,3 +1,4 @@
+import { Component, type OnInit } from '@angular/core';
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import {
     type Film,
@@ -5,7 +6,6 @@ import {
     FindError,
     type Suchkriterien,
 } from '../shared';
-import { Component, type OnInit } from '@angular/core';
 import { first, tap } from 'rxjs/operators';
 import { HttpStatusCode } from '@angular/common/http';
 import { Title } from '@angular/platform-browser'; // eslint-disable-line @typescript-eslint/consistent-type-imports
