@@ -8,7 +8,7 @@ import log from 'loglevel';
 
 /**
  * Komponente mit dem Tag &lt;hs-liniendiagramm&gt; zur Visualisierung
- * von Rating  durch ein Liniendiagramm.
+ * von Rating durch ein Liniendiagramm.
  */
 @Component({
     selector: 'hs-liniendiagramm',
@@ -46,7 +46,7 @@ export class LiniendiagrammComponent implements OnInit {
                     return result.filter(film => film.rating!== undefined);
                 }),
                 tap(filmItems => {
-                    const ratingItems = this.#getRating Items(filmItems);
+                    const bewertungItems = this.#getRatingItems(filmItems);
                     const umsatzItems = this.#getUmsatzItems(filmItems);
                     this.#initSeries(ratingItems, umsatzItems);
                 }),
@@ -55,7 +55,7 @@ export class LiniendiagrammComponent implements OnInit {
     }
 
     // https://swimlane.gitbook.io/ngx-charts/examples/line-area-charts/line-chart
-    #getRating Items(filme: Film[]): DataItem[] {
+    #getRatingItems(filme: Film[]): DataItem[] {
         // eslint-disable-next-line arrow-body-style
         return filme.map(film => {
             return {
@@ -65,12 +65,12 @@ export class LiniendiagrammComponent implements OnInit {
         });
     }
 
-    #getUmsatzItems(filme: Film[]): DataItem[] {
+    #getDatumItems(filme: Film[]): DataItem[] {
         // eslint-disable-next-line arrow-body-style
         return filme.map(film => {
             return {
                 name: film.id!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
-                value: film.umsatz,
+                value: film.datum,
             };
         });
     }
@@ -78,12 +78,12 @@ export class LiniendiagrammComponent implements OnInit {
     #initSeries(ratingItems: DataItem[], umsatzItems: DataItem[]) {
         const series: MultiSeries = [
             {
-                name: 'Rating ',
+                name: 'Rating',
                 series: ratingItems,
             },
             {
-                name: 'Umsatz',
-                series: umsatzItems,
+                name: 'Datum',
+                series: datumItems,
             },
         ];
 

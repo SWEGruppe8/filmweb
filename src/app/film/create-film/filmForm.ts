@@ -14,8 +14,6 @@ export interface FilmForm extends FilmShared {
     release: Date;
     spannend: boolean;
     gruselig: boolean;
-    nachname: string;
-    vorname: string;
 }
 
 /**
@@ -32,9 +30,6 @@ export const toFilm = (filmForm: FilmForm) => {
         genre,
         studio,
         release,
-        umsatz,
-        nachname,
-        vorname,
         newsletter,
         spannend,
         gruselig,
@@ -64,8 +59,6 @@ export const toFilm = (filmForm: FilmForm) => {
         genre,
         studio,
         release: releaseTemporal,
-        umsatz,
-        regisseur: { nachname, vorname },
         newsletter,
         schlagwoerter,
         isan,
