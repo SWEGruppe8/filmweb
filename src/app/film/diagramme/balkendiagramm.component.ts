@@ -77,7 +77,7 @@ export class BalkendiagrammComponent implements OnInit {
     // https://blog.knoldus.com/visualizing-data-with-ngx-charts-in-angular
     #toDataItem(film: Film): DataItem {
         return {
-            name: film.id!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
+            name: film.titel,
             value: film.rating!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
         };
     }
