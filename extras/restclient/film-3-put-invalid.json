@@ -10,6 +10,6 @@
     "release": "12345-123-123",
     "isan": "falsche-isan",
     "homepage": "anyHomepage",
-    "schauspieler": ["SPANNED"]
+    "schlagwoerter": ["SPANNED"]
   }
   

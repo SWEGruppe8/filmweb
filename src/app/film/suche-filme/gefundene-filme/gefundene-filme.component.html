@@ -16,7 +16,7 @@
         <th>ID</th>
         <th>Titel</th>
         <th>Studio</th>
-        <th>Schauspieler</th>
+        <th>Schlagwoerter</th>
         <th>
           <span class="visually-hidden">Spalte f&uuml;r Details</span>
         </th>
@@ -43,10 +43,10 @@
             </span>
           </td>
           <td (click)="onClick(film)">
-            <span *ngFor="let schauspieler of film.schauspieler">
-              <span [ngSwitch]="schauspieler">
-                <span *ngSwitchCase="'LEONARDO'"> Leonardo <br /> </span>
-                <span *ngSwitchCase="'SALMA'"> Salma </span>
+            <span *ngFor="let schlagwoerter of film.schlagwoerter">
+              <span [ngSwitch]="schlagwoerter">
+                <span *ngSwitchCase="'SPANNEND'"> Spannend <br /> </span>
+                <span *ngSwitchCase="'GRUSELIG'"> Gruselig </span>
               </span>
             </span>
           </td>

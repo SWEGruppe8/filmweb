@@ -19,7 +19,7 @@ interface Link {
 export interface FilmServer extends FilmShared {
     bewertung?: number;
     release?: string;
-    schauspieler?: string[];
+    schlagwoerter?: string[];
     regisseur: Regisseur;
     // eslint-disable-next-line @typescript-eslint/naming-convention
     _links?: {
@@ -67,7 +67,7 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
         umsatz,
         regisseur,
         newsletter,
-        schauspieler,
+        schlagwoerter,
         isan,
     } = filmServer;
 
@@ -93,7 +93,7 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
         umsatz,
         regisseur,
         newsletter,
-        schauspieler: schauspieler ?? [],
+        schlagwoerter: schlagwoerter ?? [],
         isan,
         version,
     };
@@ -118,7 +118,7 @@ export const toFilmServer = (film: Film): FilmServer => {
         umsatz: film.umsatz,
         regisseur: film.regisseur,
         newsletter: film.newsletter,
-        schauspieler: film.schauspieler,
+        schlagwoerter: film.schlagwoerter,
         isan: film.isan,
     };
 };

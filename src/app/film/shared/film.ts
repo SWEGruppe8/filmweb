@@ -28,7 +28,7 @@ export interface Film {
     umsatz: number;
     regisseur: Regisseur;
     newsletter: boolean | undefined;
-    schauspieler: string[];
+    schlagwoerter: string[];
     isan: string;
 }
 
