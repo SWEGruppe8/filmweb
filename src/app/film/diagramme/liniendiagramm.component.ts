@@ -8,7 +8,7 @@ import log from 'loglevel';
 
 /**
  * Komponente mit dem Tag &lt;hs-liniendiagramm&gt; zur Visualisierung
- * von Bewertungen durch ein Liniendiagramm.
+ * von Rating  durch ein Liniendiagramm.
  */
 @Component({
     selector: 'hs-liniendiagramm',
@@ -43,24 +43,24 @@ export class LiniendiagrammComponent implements OnInit {
                         throw new KeineFilmeError();
                     }
 
-                    return result.filter(film => film.bewertung !== undefined);
+                    return result.filter(film => film.rating!== undefined);
                 }),
                 tap(filmItems => {
-                    const bewertungItems = this.#getBewertungItems(filmItems);
+                    const ratingItems = this.#getRating Items(filmItems);
                     const umsatzItems = this.#getUmsatzItems(filmItems);
-                    this.#initSeries(bewertungItems, umsatzItems);
+                    this.#initSeries(ratingItems, umsatzItems);
                 }),
             )
             .subscribe();
     }
 
     // https://swimlane.gitbook.io/ngx-charts/examples/line-area-charts/line-chart
-    #getBewertungItems(filme: Film[]): DataItem[] {
+    #getRating Items(filme: Film[]): DataItem[] {
         // eslint-disable-next-line arrow-body-style
         return filme.map(film => {
             return {
                 name: film.id!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
-                value: film.bewertung!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
+                value: film.rating!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
             };
         });
     }
@@ -75,11 +75,11 @@ export class LiniendiagrammComponent implements OnInit {
         });
     }
 
-    #initSeries(bewertungItems: DataItem[], umsatzItems: DataItem[]) {
+    #initSeries(ratingItems: DataItem[], umsatzItems: DataItem[]) {
         const series: MultiSeries = [
             {
-                name: 'Bewertungen',
-                series: bewertungItems,
+                name: 'Rating ',
+                series: ratingItems,
             },
             {
                 name: 'Umsatz',

@@ -76,7 +76,7 @@ export class UpdateFilmComponent implements OnInit {
         const { studio } = this.updateForm.value as {
             studio: Studio | '' | undefined;
         };
-        const { bewertung } = this.updateForm.value as { bewertung: number };
+        const { rating } = this.updateForm.value as { rating: number };
         const { isan } = this.updateForm.value as { isan: string };
 
         const { film, service } = this;
@@ -85,7 +85,7 @@ export class UpdateFilmComponent implements OnInit {
         film.titel = titel;
         film.genre = genre;
         film.studio = studio;
-        film.bewertung = bewertung;
+        film.rating = rating;
         film.isan = isan;
         log.debug('UpdateFilmComponent.onSubmit: film=', film);
 
@@ -154,7 +154,6 @@ export class UpdateFilmComponent implements OnInit {
         switch (statuscode) {
             case HttpStatusCode.UnprocessableEntity: {
                 const { cause } = result;
-                // TODO Aufbereitung der Fehlermeldung: u.a. Anfuehrungszeichen
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                 this.errorMsg =
                     cause instanceof HttpErrorResponse

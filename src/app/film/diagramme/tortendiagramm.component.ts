@@ -8,7 +8,7 @@ import log from 'loglevel';
 
 /**
  * Komponente mit dem Tag &lt;hs-tortendiagramm&gt; zur Visualisierung
- * von Bewertungen durch ein Tortendiagramm.
+ * von Rating  durch ein Tortendiagramm.
  */
 @Component({
     selector: 'hs-tortendiagramm',
@@ -44,7 +44,7 @@ export class TortendiagrammComponent implements OnInit {
                     }
 
                     return result
-                        .filter(film => film.bewertung !== undefined)
+                        .filter(film => film.rating!== undefined)
                         .map(film => this.#toDataItem(film));
                 }),
                 tap(dataItems => {
@@ -58,7 +58,7 @@ export class TortendiagrammComponent implements OnInit {
     #toDataItem(film: Film): DataItem {
         return {
             name: film.id!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
-            value: film.bewertung!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
+            value: film.rating!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
         };
     }
 }

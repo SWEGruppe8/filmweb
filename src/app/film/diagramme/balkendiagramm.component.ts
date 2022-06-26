@@ -26,7 +26,7 @@ import log from 'loglevel';
 
 /**
  * Komponente mit dem Tag &lt;hs-balkendiagramm&gt; zur Visualisierung
- * von Bewertungen durch ein Balkendiagramm.
+ * von Rating  durch ein Balkendiagramm.
  * https://blog.angular-university.io/angular-viewchild
  */
 @Component({
@@ -63,7 +63,7 @@ export class BalkendiagrammComponent implements OnInit {
                     }
 
                     return result
-                        .filter(film => film.bewertung !== undefined)
+                        .filter(film => film.rating!== undefined)
                         .map(film => this.#toDataItem(film));
                 }),
                 tap(dataItems => {
@@ -78,7 +78,7 @@ export class BalkendiagrammComponent implements OnInit {
     #toDataItem(film: Film): DataItem {
         return {
             name: film.id!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
-            value: film.bewertung!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
+            value: film.rating!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
         };
     }
 }

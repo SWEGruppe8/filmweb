@@ -36,8 +36,8 @@ GET {{localHTTPS}}/rest/filme?spannend=true&gruselig=true
 ### Suche mit gueltiger Filmgenre
 GET {{localHTTPS}}/rest/filme?genre=KINDLE
 
-### Suche mit gueltigem Bewertung
-GET {{localHTTPS}}/rest/filme?bewertung=1
+### Suche mit gueltigem Rating 
+GET {{localHTTPS}}/rest/filme?rating=1
 
 ### Suche Filme mit einem Newsletter
 GET {{localHTTPS}}/rest/filme?newsletter=true

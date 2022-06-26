@@ -10,7 +10,7 @@ import log from 'loglevel';
  * </ul>
  */
 export interface FilmForm extends FilmShared {
-    bewertung: string;
+    rating: string;
     release: Date;
     spannend: boolean;
     gruselig: boolean;
@@ -28,7 +28,7 @@ export const toFilm = (filmForm: FilmForm) => {
 
     const {
         titel,
-        bewertung,
+        rating,
         genre,
         studio,
         release,
@@ -41,7 +41,7 @@ export const toFilm = (filmForm: FilmForm) => {
         isan,
     } = filmForm;
 
-    const bewertungNumber = Number(bewertung);
+    const ratingNumber = Number(rating);
 
     const releaseTemporal = new Temporal.PlainDate(
         release.getFullYear(),
@@ -60,7 +60,7 @@ export const toFilm = (filmForm: FilmForm) => {
 
     const film: Film = {
         titel: titel ?? 'unbekannt',
-        bewertung: bewertungNumber,
+        rating: ratingNumber,
         genre,
         studio,
         release: releaseTemporal,

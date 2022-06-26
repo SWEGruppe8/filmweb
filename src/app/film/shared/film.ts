@@ -21,7 +21,7 @@ export interface Film {
     id?: string;
     version?: number;
     titel: string;
-    bewertung: number | undefined;
+    rating: number | undefined;
     genre: FilmGenre;
     studio: Studio | '' | undefined;
     release: Temporal.PlainDate | undefined;

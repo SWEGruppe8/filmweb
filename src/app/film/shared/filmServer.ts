@@ -17,7 +17,7 @@ interface Link {
  * </ul>
  */
 export interface FilmServer extends FilmShared {
-    bewertung?: number;
+    rating?: number;
     release?: string;
     schlagwoerter?: string[];
     regisseur: Regisseur;
@@ -60,7 +60,7 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
 
     const {
         titel,
-        bewertung,
+        rating,
         genre,
         studio,
         release,
@@ -86,7 +86,7 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
     const film: Film = {
         id,
         titel: titel ?? 'unbekannt',
-        bewertung,
+        rating,
         genre,
         studio,
         release: releaseTemporal,
@@ -111,7 +111,7 @@ export const toFilmServer = (film: Film): FilmServer => {
         film.release === undefined ? undefined : film.release.toString();
     return {
         titel: film.titel,
-        bewertung: film.bewertung,
+        rating: film.rating,
         genre: film.genre,
         studio: film.studio,
         release,

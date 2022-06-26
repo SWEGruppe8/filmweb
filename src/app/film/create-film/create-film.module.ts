@@ -1,5 +1,5 @@
 import { CalendarModule, DateAdapter } from 'angular-calendar';
-import { CreateBewertungComponent } from './create-bewertung.component';
+import { CreateRating Component } from './create-rating.component';
 import { CreateFilmComponent } from './create-film.component';
 import { CreateGenreComponent } from './create-genre.component';
 import { CreateIsanComponent } from './create-isan.component';
@@ -28,7 +28,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
         SharedModule,
     ],
     declarations: [
-        CreateBewertungComponent,
+        CreateRating Component,
         CreateFilmComponent,
         CreateGenreComponent,
         CreateIsanComponent,
