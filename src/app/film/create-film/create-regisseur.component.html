@@ -34,13 +34,13 @@
 </div>
 <div class="row">
   <label for="vornameInput" class="col col-2 col-form-label gy-3">
-    VORNAME *
+    Vorname *
   </label>
   <div class="col col-10 gy-3" [formGroup]="createForm">
     <div class="input-group">
       <input
         id="vornameInput"
-        placeholder="VORNAME"
+        placeholder="Vorname"
         class="form-control"
         autofocus
         formControlName="vorname"
@@ -54,15 +54,15 @@
       >
         <i class="material-icons">error</i>
         <span class="ms-1" *ngIf="vorname.errors['required']">
-          Eine VORNAME muss eingegeben werden.
+          Ein Vorname muss eingegeben werden.
         </span>
         <i class="material-icons">error</i>
         <span class="ms-1" *ngIf="vorname.errors['minlength']">
-          Eine Postleitzahl muss fünfstellig sein
+          Ein Vorname muss mind. 2 Buchstaben haben
         </span>
         <i class="material-icons">error</i>
         <span class="ms-1" *ngIf="vorname.errors['maxlength']">
-          Eine Postleitzahl muss fünfstellig sein
+          Ein Vorname muss mit einem Buchstaben beginnen
         </span>
       </div>
     </div>

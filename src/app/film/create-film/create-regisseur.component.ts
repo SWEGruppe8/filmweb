@@ -14,10 +14,6 @@ import log from 'loglevel';
 export class CreateRegisseurComponent implements OnInit {
     private static readonly MIN_LENGTH = 2;
 
-    private static readonly MIN_LENGTH_VORNAME = 5;
-
-    private static readonly MAX_LENGTH_VORNAME = 5;
-
     @Input()
     createForm!: FormGroup;
 
@@ -33,11 +29,8 @@ export class CreateRegisseurComponent implements OnInit {
 
     readonly vorname = new FormControl(undefined, [
         Validators.required,
-        Validators.pattern('[0-9].*$'),
-        Validators.minLength(CreateRegisseurComponent.MIN_LENGTH_VORNAME),
-        Validators.maxLength(CreateRegisseurComponent.MAX_LENGTH_VORNAME),
+        Validators.minLength(CreateRegisseurComponent.MIN_LENGTH),
     ]);
-    // readonly kundeGroup = new FormGroup({ kunde: this.kunde })
 
     ngOnInit() {
         log.debug('CreateRegisseurComponent.ngOnInit');
