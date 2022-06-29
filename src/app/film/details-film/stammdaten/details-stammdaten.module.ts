@@ -1,25 +1,29 @@
-import { DetailsDatumComponent } from './details-datum.component';
+import { DetailsBewertungComponent } from './details-bewertung.component';
 import { DetailsGenreComponent } from './details-genre.component';
 import { DetailsHomepageComponent } from './details-homepage.component';
-import { DetailsOnlineComponent } from './details-online.component';
-import { DetailsRatingComponent } from './details-rating.component';
+import { DetailsNewsletterComponent } from './details-newsletter.component';
+import { DetailsRegisseurComponent } from './details-regisseur.component';
+import { DetailsReleaseComponent } from './details-release.component';
 import { DetailsStammdatenComponent } from './details-stammdaten.component';
 import { DetailsStudioComponent } from './details-studio.component';
 import { DetailsTitelComponent } from './details-titel.component';
+import { DetailsUmsatzComponent } from './details-umsatz.component';
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../../../shared/shared.module';
 
 @NgModule({
     imports: [SharedModule],
     declarations: [
-        DetailsDatumComponent,
+        DetailsBewertungComponent,
         DetailsGenreComponent,
         DetailsHomepageComponent,
-        DetailsOnlineComponent,
-        DetailsRatingComponent,
+        DetailsNewsletterComponent,
+        DetailsRegisseurComponent,
+        DetailsReleaseComponent,
         DetailsStammdatenComponent,
         DetailsStudioComponent,
         DetailsTitelComponent,
+        DetailsUmsatzComponent,
     ],
     exports: [DetailsStammdatenComponent],
 })
