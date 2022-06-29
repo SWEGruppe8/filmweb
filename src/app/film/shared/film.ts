@@ -1,6 +1,6 @@
 import { type Temporal } from '@js-temporal/polyfill';
 
-export const MAX_RATING = 5;
+export const MAX_BEWERTUNG = 5;
 
 export type Studio = 'DISNEY' | 'WARNER';
 

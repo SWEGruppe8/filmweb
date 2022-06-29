@@ -5,7 +5,7 @@ export {
     type Studio,
     HOMEPAGE_REGEX,
     ISAN_REGEX,
-    MAX_RATING,
+    MAX_BEWERTUNG,
 } from './film';
 export {
     FilmReadService,
