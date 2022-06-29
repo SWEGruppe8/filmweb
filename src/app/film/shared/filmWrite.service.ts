@@ -51,7 +51,7 @@ export class FilmWriteService {
      */
     save(film: Film): Observable<SaveError | string> {
         log.debug('FilmWriteService.save: film=', film);
-        film.datum = Temporal.Now.plainDateISO();
+        film.release = Temporal.Now.plainDateISO();
         log.debug('FilmWriteService.save: film=', film);
 
         /* eslint-disable @typescript-eslint/naming-convention */
@@ -111,8 +111,8 @@ export class FilmWriteService {
     update(film: Film): Observable<Film | UpdateError> {
         log.debug('FilmWriteService.update: film=', film);
 
-        // id, version und schlagwoerter gehoeren nicht zu den serverseitigen Nutzdaten
-        const { id, version, schlagwoerter, ...filmDTO } = film; // eslint-disable-line @typescript-eslint/no-unused-vars
+        // id, version und schaupsieler gehoeren nicht zu den serverseitigen Nutzdaten
+        const { id, version, schauspieler, ...filmDTO } = film; // eslint-disable-line @typescript-eslint/no-unused-vars
         if (version === undefined) {
             const msg = `Keine Versionsnummer fuer den Film ${id}`;
             log.debug(msg);
