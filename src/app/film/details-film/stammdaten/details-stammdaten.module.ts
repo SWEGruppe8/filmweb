@@ -1,6 +1,7 @@
 import { DetailsBewertungComponent } from './details-bewertung.component';
 import { DetailsGenreComponent } from './details-genre.component';
 import { DetailsHomepageComponent } from './details-homepage.component';
+import { DetailsIsanComponent } from './details-isan.component';
 import { DetailsNewsletterComponent } from './details-newsletter.component';
 import { DetailsRegisseurComponent } from './details-regisseur.component';
 import { DetailsReleaseComponent } from './details-release.component';
@@ -17,6 +18,7 @@ import { SharedModule } from '../../../shared/shared.module';
         DetailsBewertungComponent,
         DetailsGenreComponent,
         DetailsHomepageComponent,
+        DetailsIsanComponent,
         DetailsNewsletterComponent,
         DetailsRegisseurComponent,
         DetailsReleaseComponent,
