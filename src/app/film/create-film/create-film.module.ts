@@ -1,11 +1,11 @@
 import { CalendarModule, DateAdapter } from 'angular-calendar';
-import { CreateDatumComponent } from './create-datum.component';
+import { CreateReleaseComponent } from './create-release.component';
 import { CreateFilmComponent } from './create-film.component';
 import { CreateGenreComponent } from './create-genre.component';
 import { CreateHomepageComponent } from './create-homepage.component';
-import { CreateOnlineComponent } from './create-online.component';
-import { CreateRatingComponent } from './create-rating.component';
-import { CreateSchlagwoerterComponent } from './create-schlagwoerter.component';
+import { CreateNewsletterComponent } from './create-newsletter.component';
+import { CreateBewertungComponent } from './create-bewertung.component';
+import { CreateschauspielerComponent } from './create-schauspieler.component';
 import { CreateStudioComponent } from './create-studio.component';
 import { CreateTitelComponent } from './create-titel.component';
 import { NgModule } from '@angular/core';
@@ -26,13 +26,13 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
         SharedModule,
     ],
     declarations: [
-        CreateDatumComponent,
+        CreateReleaseComponent,
         CreateFilmComponent,
         CreateGenreComponent,
         CreateHomepageComponent,
-        CreateOnlineComponent,
-        CreateRatingComponent,
-        CreateSchlagwoerterComponent,
+        CreateNewsletterComponent,
+        CreateBewertungComponent,
+        CreateschauspielerComponent,
         CreateStudioComponent,
         CreateTitelComponent,
     ],

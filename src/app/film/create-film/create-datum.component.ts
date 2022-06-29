@@ -5,29 +5,29 @@ import log from 'loglevel';
 // https://mattlewis92.github.io/angular-calendar/#/kitchen-sink
 
 /**
- * Komponente mit dem Tag &lt;hs-create-datum&gt;, um das Erfassungsformular
+ * Komponente mit dem Tag &lt;hs-create-release&gt;, um das Erfassungsformular
  * f&uuml;r einen neuen Film zu realisieren.
  */
 @Component({
-    selector: 'hs-create-datum',
-    templateUrl: './create-datum.component.html',
+    selector: 'hs-create-release',
+    templateUrl: './create-release.component.html',
 })
-export class CreateDatumComponent implements OnInit {
+export class CreateReleaseComponent implements OnInit {
     @Input()
     createForm!: FormGroup;
 
     readonly today = new Date();
 
-    readonly datum = new FormControl(this.today);
+    readonly release = new FormControl(this.today);
 
     ngOnInit() {
-        log.debug('CreateDatumComponent.ngOnInit');
+        log.debug('CreateReleaseComponent.ngOnInit');
         // siehe formControlName innerhalb @Component({templateUrl: ...})
-        this.createForm.addControl('datum', this.datum);
+        this.createForm.addControl('release', this.release);
     }
 
     dayClicked({ date }: { date: Date }): void {
-        log.debug('CreateDatumComponent: dayClicked', date);
-        this.createForm.setControl('datum', new FormControl(date));
+        log.debug('CreateReleaseComponent: dayClicked', date);
+        this.createForm.setControl('release', new FormControl(date));
     }
 }

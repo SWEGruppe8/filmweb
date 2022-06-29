@@ -10,8 +10,8 @@ import log from 'loglevel';
  * </ul>
  */
 export interface FilmForm extends FilmShared {
-    rating: number;
-    datum: Date;
+    bewertung: number;
+    release: Date;
     spannend: boolean;
     gruselig: boolean;
 }
@@ -26,43 +26,49 @@ export const toFilm = (filmForm: FilmForm) => {
 
     const {
         titel,
-        rating,
+        bewertung,
         genre,
         studio,
-        online,
-        datum,
+        newsletter,
+        release,
         homepage,
         spannend,
         gruselig,
+        regisseur,
+        umsatz,
+        isan,
     } = filmForm;
 
-    const ratingNumber = Number(rating);
+    const bewertungNumber = Number(bewertung);
 
-    const datumTemporal = new Temporal.PlainDate(
-        datum.getFullYear(),
-        datum.getMonth() + 1,
-        datum.getDate(),
+    const releaseTemporal = new Temporal.PlainDate(
+        release.getFullYear(),
+        release.getMonth() + 1,
+        release.getDate(),
     );
-    log.debug('toFilm: datumTemporal=', datumTemporal);
+    log.debug('toFilm: releaseTemporal=', releaseTemporal);
 
-    const schlagwoerter: string[] = [];
+    const schauspieler: string[] = [];
     if (spannend) {
-        schlagwoerter.push('SPANNEND');
+        schauspieler.push('SPANNEND');
     }
     if (gruselig) {
-        schlagwoerter.push('GRUSELIG');
+        schauspieler.push('GRUSELIG');
     }
 
     const film: Film = {
         titel: titel ?? 'unbekannt',
-        rating: ratingNumber,
+        bewertung: bewertungNumber,
         genre,
         studio,
-        online,
-        datum: datumTemporal,
+        newsletter,
+        release: releaseTemporal,
         homepage,
-        schlagwoerter,
+        schauspieler,
         version: 0,
+        regisseur,
+        umsatz,
+        isan,
     };
     log.debug('toFilm: film=', film);
     return film;
