@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../../../shared/shared.module';
 import { SucheGenreComponent } from './suche-genre.component';
-import { SucheSchlagwoerterComponent } from './suche-schlagwoerter.component';
+import { SucheSchauspielerComponent } from './suche-schauspieler.component';
 import { SucheStudioComponent } from './suche-studio.component';
 import { SucheTitelComponent } from './suche-titel.component';
 
@@ -11,7 +11,7 @@ import { SuchformularComponent } from './suchformular.component';
     imports: [SharedModule],
     declarations: [
         SucheGenreComponent,
-        SucheSchlagwoerterComponent,
+        SucheSchauspielerComponent,
         SucheStudioComponent,
         SucheTitelComponent,
         SuchformularComponent,
