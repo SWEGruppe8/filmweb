@@ -1,4 +1,7 @@
+// eslint-disable-next-line eslint-comments/disable-enable-pair
+/* eslint-disable max-lines-per-function */
 import { type Film, type FilmShared } from './film';
+import type { Regisseur } from './film';
 import { Temporal } from '@js-temporal/polyfill';
 import log from 'loglevel';
 
@@ -16,9 +19,10 @@ interface Link {
  * </ul>
  */
 export interface FilmServer extends FilmShared {
-    rating?: number;
-    datum?: string;
-    schlagwoerter?: string[];
+    bewertung?: number;
+    release?: string;
+    schauspieler?: string[];
+    regisseur: Regisseur;
     // eslint-disable-next-line @typescript-eslint/naming-convention
     _links?: {
         self: Link;
@@ -57,37 +61,42 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
 
     const {
         titel,
-        rating,
+        bewertung,
         genre,
         studio,
-        online,
-        datum,
+        newsletter,
+        release,
+        umsatz,
+        regisseur,
         homepage,
-        schlagwoerter,
+        schauspieler,
+        isan,
     } = filmServer;
 
-    let datumTemporal: Temporal.PlainDate | undefined;
-    // TODO Parsing, ob der Datum-String valide ist
-    if (datum !== undefined) {
-        const [yearStr, monthStr, dayStr] = datum
+    let releaseTemporal: Temporal.PlainDate | undefined;
+    if (release !== undefined) {
+        const [yearStr, monthStr, dayStr] = release
             .replace(/T.*/gu, '')
             .split('-');
         const year = Number(yearStr);
         const month = Number(monthStr);
         const day = Number(dayStr);
-        datumTemporal = new Temporal.PlainDate(year, month, day);
+        releaseTemporal = new Temporal.PlainDate(year, month, day);
     }
 
     const film: Film = {
         id,
         titel: titel ?? 'unbekannt',
-        rating,
+        bewertung,
         genre,
         studio,
-        online,
-        datum: datumTemporal,
+        newsletter,
+        release: releaseTemporal,
+        umsatz,
+        regisseur,
         homepage,
-        schlagwoerter: schlagwoerter ?? [],
+        isan,
+        schauspieler: schauspieler ?? [],
         version,
     };
     log.debug('Film.fromServer: film=', film);
@@ -100,15 +109,19 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
  * @return Das JSON-Objekt f&uuml;r den RESTful Web Service
  */
 export const toFilmServer = (film: Film): FilmServer => {
-    const datum = film.datum === undefined ? undefined : film.datum.toString();
+    const release =
+        film.release === undefined ? undefined : film.release.toString();
     return {
         titel: film.titel,
-        rating: film.rating,
+        bewertung: film.bewertung,
         genre: film.genre,
         studio: film.studio,
-        online: film.online,
-        datum,
+        release,
+        umsatz: film.umsatz,
+        regisseur: film.regisseur,
+        newsletter: film.newsletter,
         homepage: film.homepage,
-        schlagwoerter: film.schlagwoerter,
+        schauspieler: film.schauspieler,
+        isan: film.isan,
     };
 };
