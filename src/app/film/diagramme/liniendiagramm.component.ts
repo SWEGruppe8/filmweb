@@ -46,10 +46,8 @@ export class LiniendiagrammComponent implements OnInit {
                     return result.filter(film => film.bewertung !== undefined);
                 }),
                 tap(filmItems => {
-                    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                     const bewertungItems = this.#getBewertungItems(filmItems);
                     const datumItems = this.#getDatumItems(filmItems);
-                    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
                     this.#initSeries(bewertungItems, datumItems);
                 }),
             )
