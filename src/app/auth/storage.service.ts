@@ -1,20 +1,3 @@
-/*
- * Copyright (C) 2016 - present Juergen Zimmermann, Hochschule Karlsruhe
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 // Alternativen: Local Storage oder Session-Cookies mit dem Token
 
 import { Injectable } from '@angular/core';
@@ -25,7 +8,6 @@ import log from 'loglevel';
 // Ablaufdatum oder Session-Cookie (Lebensdauer gebunden an Tab).
 // Kein XSS (Cross-Site Scripting) wie bei Local Storage
 // Evtl. CSRF (Cross-Site Request Forgery)
-
 @Injectable({ providedIn: 'root' })
 export class StorageService {
     private static readonly AUTHORIZATION = 'authorization';
@@ -62,6 +44,7 @@ export class StorageService {
     get roles() {
         // z.B. 'admin,mitarbeiter'
         const rolesStr = this.#getCookie(StorageService.ROLES);
+        log.debug('GET: rolesStr=', rolesStr);
         // z.B. ['admin', 'mitarbeiter']
         return rolesStr === undefined
             ? []
