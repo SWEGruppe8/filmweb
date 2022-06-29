@@ -21,7 +21,6 @@ export interface Suchkriterien {
     titel: string;
     studio: Studio | '';
     genre: FilmGenre | '';
-    regisseur: Regisseur | { nachname: ''; vorname: '' };
     schauspieler: { salma: boolean; leonardo: boolean };
 }
 
