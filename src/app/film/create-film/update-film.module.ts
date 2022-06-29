@@ -4,7 +4,6 @@ import { Title } from '@angular/platform-browser';
 import { UpdateBewertungComponent } from './update-bewertung.component';
 import { UpdateFilmComponent } from './update-film.component';
 import { UpdateGenreComponent } from './update-genre.component';
-import { UpdateHomepageComponent } from './update-homepage.component';
 import { UpdateIsanComponent } from './update-isan.component';
 import { UpdateStudioComponent } from './update-studio.component';
 import { UpdateTitelComponent } from './update-titel.component';
@@ -15,7 +14,6 @@ import { UpdateTitelComponent } from './update-titel.component';
         UpdateBewertungComponent,
         UpdateFilmComponent,
         UpdateGenreComponent,
-        UpdateHomepageComponent,
         UpdateIsanComponent,
         UpdateStudioComponent,
         UpdateTitelComponent,

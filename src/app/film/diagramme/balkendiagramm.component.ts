@@ -63,7 +63,7 @@ export class BalkendiagrammComponent implements OnInit {
                     }
 
                     return result
-                        .filter(film => film.rating !== undefined)
+                        .filter(film => film.bewertung !== undefined)
                         .map(film => this.#toDataItem(film));
                 }),
                 tap(dataItems => {
@@ -78,7 +78,7 @@ export class BalkendiagrammComponent implements OnInit {
     #toDataItem(film: Film): DataItem {
         return {
             name: film.titel,
-            value: film.rating!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
+            value: film.bewertung!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
         };
     }
 }
