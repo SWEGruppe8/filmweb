@@ -17,6 +17,10 @@ export interface Regisseur {
     nachname: string;
     vorname: string;
 }
+export interface Umsatz {
+    betrag: number;
+    waehrung: string;
+}
 
 /**
  * Model als Plain-Old-JavaScript-Object (POJO) fuer die Daten *UND*
@@ -30,7 +34,7 @@ export interface Film {
     bewertung: number | undefined;
     newsletter: boolean | undefined;
     release: Temporal.PlainDate | undefined;
-    umsatz: number;
+    umsatz: Umsatz;
     homepage: string;
     studio: Studio | '' | undefined;
     genre: FilmGenre;
@@ -49,7 +53,7 @@ export interface FilmShared {
     titel: string | undefined;
     isan: string;
     newsletter?: boolean;
-    umsatz: number;
+    umsatz: Umsatz;
     homepage: string;
     studio?: Studio | '';
     genre: FilmGenre;
