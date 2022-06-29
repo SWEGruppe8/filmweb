@@ -2,7 +2,7 @@
   <label for="umsatzInput" class="col col-2 col-form-label gy-3"
     >Umsatz *</label
   >
-  <div class="col col-10 gy-3" [formGroup]="createForm">
+  <div class="col col-10 gy-3" [formGroup]="form">
     <div class="input-group">
       <input
         id="umsatzInput"
@@ -10,18 +10,24 @@
         required
         class="form-control"
         type="number"
-        formControlName="umsatz"
-        [class.is-invalid]="umsatz.invalid && umsatz.touched"
-        [class.is-valid]="umsatz.valid && umsatz.touched"
+        formControlName="betrag"
+        [class.is-invalid]="betrag.invalid && betrag.touched"
+        [class.is-valid]="betrag.valid && betrag.touched"
       />
-      <span class="input-group-addon ms-1">&#x20ac;</span>
-
+      <select class="form-select" formControlName="waehrung">
+        <option value="">Währung ausw&auml;hlen</option>
+        <option value="EUR">€</option>
+        <option value="USD">$</option>
+        <option value="CHF">CHF</option>
+        <option value="GBP">£</option>
+        <option value="JPY">¥</option>
+      </select>
       <div
         class="invalid-feedback"
-        *ngIf="umsatz.invalid && umsatz.touched && umsatz.errors"
+        *ngIf="betrag.invalid && betrag.touched && betrag.errors"
       >
         <i class="material-icons">error</i>
-        <span class="ms-1" *ngIf="umsatz.errors['required']">
+        <span class="ms-1" *ngIf="betrag.errors['required']">
           Ein Umsatz muss eingegeben werden, z.B. 123.45.
         </span>
       </div>

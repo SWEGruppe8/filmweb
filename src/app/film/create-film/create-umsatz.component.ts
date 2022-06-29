@@ -12,13 +12,20 @@ import log from 'loglevel';
 })
 export class CreateUmsatzComponent implements OnInit {
     @Input()
-    createForm!: FormGroup;
+    form!: FormGroup;
 
-    readonly umsatz = new FormControl(undefined, Validators.required);
+    readonly betrag = new FormControl(undefined, [
+        Validators.required,
+        // eslint-disable-next-line require-unicode-regexp
+        Validators.pattern(/\d/),
+    ]);
+
+    readonly waehrung = new FormControl(undefined, [Validators.required]);
 
     ngOnInit() {
         log.debug('CreateUmsatzComponent.ngOnInit');
         // siehe formControlName innerhalb @Component({templateUrl: ...})
-        this.createForm.addControl('umsatz', this.umsatz);
+        this.form.addControl('betrag', this.betrag);
+        this.form.addControl('waehrung', this.waehrung);
     }
 }
