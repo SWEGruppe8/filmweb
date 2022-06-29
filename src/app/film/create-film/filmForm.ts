@@ -26,17 +26,17 @@ export const toFilm = (filmForm: FilmForm) => {
 
     const {
         titel,
+        isan,
         bewertung,
-        genre,
-        studio,
         newsletter,
         release,
+        umsatz,
         homepage,
+        studio,
+        genre,
+        regisseur,
         salma,
         leonardo,
-        regisseur,
-        umsatz,
-        isan,
     } = filmForm;
 
     const bewertungNumber = Number(bewertung);
@@ -58,17 +58,17 @@ export const toFilm = (filmForm: FilmForm) => {
 
     const film: Film = {
         titel: titel ?? 'unbekannt',
+        isan,
         bewertung: bewertungNumber,
-        genre,
-        studio,
         newsletter,
         release: releaseTemporal,
-        homepage,
-        schauspieler,
-        version: 0,
-        regisseur,
         umsatz,
-        isan,
+        homepage,
+        studio,
+        genre,
+        schauspieler,
+        regisseur,
+        version: 0,
     };
     log.debug('toFilm: film=', film);
     return film;

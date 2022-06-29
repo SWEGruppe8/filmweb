@@ -26,16 +26,16 @@ export interface Film {
     id?: string;
     version?: number;
     titel: string;
+    isan: string;
     bewertung: number | undefined;
-    genre: FilmGenre;
-    studio: Studio | '' | undefined;
     newsletter: boolean | undefined;
     release: Temporal.PlainDate | undefined;
     umsatz: number;
-    regisseur: Regisseur;
     homepage: string;
-    isan: string;
+    studio: Studio | '' | undefined;
+    genre: FilmGenre;
     schauspieler: string[];
+    regisseur: Regisseur;
 }
 
 /**
@@ -47,11 +47,11 @@ export interface Film {
  */
 export interface FilmShared {
     titel: string | undefined;
+    isan: string;
+    newsletter?: boolean;
+    umsatz: number;
+    homepage: string;
     studio?: Studio | '';
     genre: FilmGenre;
-    newsletter?: boolean;
-    homepage: string;
-    umsatz: number;
     regisseur: Regisseur;
-    isan: string;
 }
