@@ -12,7 +12,7 @@ import log from 'loglevel';
 })
 export class CreateUmsatzComponent implements OnInit {
     @Input()
-    form!: FormGroup;
+    createForm!: FormGroup;
 
     readonly betrag = new FormControl(undefined, [
         Validators.required,
@@ -25,7 +25,7 @@ export class CreateUmsatzComponent implements OnInit {
     ngOnInit() {
         log.debug('CreateUmsatzComponent.ngOnInit');
         // siehe formControlName innerhalb @Component({templateUrl: ...})
-        this.form.addControl('betrag', this.betrag);
-        this.form.addControl('waehrung', this.waehrung);
+        this.createForm.addControl('betrag', this.betrag);
+        this.createForm.addControl('waehrung', this.waehrung);
     }
 }
