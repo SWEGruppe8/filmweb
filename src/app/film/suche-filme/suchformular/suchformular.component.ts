@@ -29,9 +29,9 @@ export class SuchformularComponent {
 
     #genre: FilmGenre | '' = '';
 
-    #spannend = false;
+    #salma = false;
 
-    #gruselig = false;
+    #leonardo = false;
 
     // DI: Constructor Injection (React hat uebrigens keine DI)
     // Empfehlung: Konstruktor nur fuer DI
@@ -54,14 +54,14 @@ export class SuchformularComponent {
         this.#genre = genre as FilmGenre;
     }
 
-    setSpannend(isChecked: boolean) {
-        log.debug('SuchformularComponent.setSpannend', isChecked);
-        this.#spannend = isChecked;
+    setSalma(isChecked: boolean) {
+        log.debug('SuchformularComponent.setSalma', isChecked);
+        this.#salma = isChecked;
     }
 
-    setGruselig(isChecked: boolean) {
-        log.debug('SuchformularComponent.setGruselig', isChecked);
-        this.#gruselig = isChecked;
+    setLeonardo(isChecked: boolean) {
+        log.debug('SuchformularComponent.setLeonardo', isChecked);
+        this.#leonardo = isChecked;
     }
 
     /**
@@ -71,21 +71,21 @@ export class SuchformularComponent {
      */
     onSubmit() {
         log.debug(
-            'SuchformularComponent.onSubmit: titel / studio / genre / spannend / gruselig',
+            'SuchformularComponent.onSubmit: titel / studio / genre / salma / leonardo',
             this.#titel,
             this.#studio,
             this.#genre,
-            this.#spannend,
-            this.#gruselig,
+            this.#salma,
+            this.#leonardo,
         );
 
         this.suchkriterien$.next({
             titel: this.#titel,
             studio: this.#studio,
             genre: this.#genre,
-            schlagwoerter: {
-                spannend: this.#spannend,
-                gruselig: this.#gruselig,
+            schauspieler: {
+                salma: this.#salma,
+                leonardo: this.#leonardo,
             },
         });
 
