@@ -16,8 +16,8 @@
  */
 
 import { first, tap } from 'rxjs/operators';
+import { BasicAuthService } from './basic-auth.service'; // eslint-disable-line @typescript-eslint/consistent-type-imports
 import { Injectable } from '@angular/core';
-import { JwtService } from './jwt.service'; // eslint-disable-line @typescript-eslint/consistent-type-imports
 import { StorageService } from './storage.service'; // eslint-disable-line @typescript-eslint/consistent-type-imports
 import { Subject } from 'rxjs';
 import log from 'loglevel';
@@ -37,7 +37,7 @@ export class AuthService {
     readonly rollen$ = new Subject<string[]>();
 
     constructor(
-        private readonly jwtService: JwtService,
+        private readonly basicAuthService: BasicAuthService,
         private readonly storageService: StorageService,
     ) {
         // OnInit ist nur bei @Component moeglich
@@ -68,7 +68,7 @@ export class AuthService {
             `AuthService.login: username=${username}, password=${password}`,
         );
 
-        this.jwtService
+        this.basicAuthService
             .login(username, password)
             .pipe(
                 // den 1. Datensatz empfangen und danach implizites "unsubscribe"
