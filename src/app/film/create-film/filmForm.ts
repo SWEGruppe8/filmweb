@@ -12,8 +12,8 @@ import log from 'loglevel';
 export interface FilmForm extends FilmShared {
     bewertung: number;
     release: Date;
-    spannend: boolean;
-    gruselig: boolean;
+    salma: boolean;
+    leonardo: boolean;
 }
 
 /**
@@ -32,8 +32,8 @@ export const toFilm = (filmForm: FilmForm) => {
         newsletter,
         release,
         homepage,
-        spannend,
-        gruselig,
+        salma,
+        leonardo,
         regisseur,
         umsatz,
         isan,
@@ -49,11 +49,11 @@ export const toFilm = (filmForm: FilmForm) => {
     log.debug('toFilm: releaseTemporal=', releaseTemporal);
 
     const schauspieler: string[] = [];
-    if (spannend) {
-        schauspieler.push('SPANNEND');
+    if (salma) {
+        schauspieler.push('SALMA');
     }
-    if (gruselig) {
-        schauspieler.push('GRUSELIG');
+    if (leonardo) {
+        schauspieler.push('LEONARDO');
     }
 
     const film: Film = {

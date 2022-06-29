@@ -10,7 +10,7 @@ import log from 'loglevel';
     selector: 'hs-create-schauspieler',
     templateUrl: './create-schauspieler.component.html',
 })
-export class CreateschauspielerComponent implements OnInit {
+export class CreateSchauspielerComponent implements OnInit {
     @Input()
     createForm!: FormGroup;
 

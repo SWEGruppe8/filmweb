@@ -78,7 +78,8 @@ export class BalkendiagrammComponent implements OnInit {
     #toDataItem(film: Film): DataItem {
         return {
             name: film.titel,
-            value: film.bewertung!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            value: film.bewertung!,
         };
     }
 }
