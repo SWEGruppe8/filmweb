@@ -61,16 +61,16 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
 
     const {
         titel,
+        isan,
         bewertung,
-        genre,
-        studio,
         newsletter,
         release,
         umsatz,
-        regisseur,
         homepage,
+        studio,
+        genre,
         schauspieler,
-        isan,
+        regisseur,
     } = filmServer;
 
     let releaseTemporal: Temporal.PlainDate | undefined;
@@ -87,16 +87,16 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
     const film: Film = {
         id,
         titel: titel ?? 'unbekannt',
+        isan,
         bewertung,
-        genre,
-        studio,
         newsletter,
         release: releaseTemporal,
         umsatz,
-        regisseur,
         homepage,
-        isan,
+        studio,
+        genre,
         schauspieler: schauspieler ?? [],
+        regisseur,
         version,
     };
     log.debug('Film.fromServer: film=', film);
