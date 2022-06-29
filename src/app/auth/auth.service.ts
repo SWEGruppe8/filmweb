@@ -22,7 +22,7 @@ import { StorageService } from './storage.service'; // eslint-disable-line @type
 import { Subject } from 'rxjs';
 import log from 'loglevel';
 
-export const ROLLE_ADMIN = 'admin';
+export const ROLLE_ADMIN = 'ADMIN';
 // Spring Security:
 // export const ROLLE_ADMIN = 'ROLE_ADMIN'
 
@@ -67,7 +67,6 @@ export class AuthService {
         log.debug(
             `AuthService.login: username=${username}, password=${password}`,
         );
-
         this.basicAuthService
             .login(username, password)
             .pipe(
@@ -104,6 +103,16 @@ export class AuthService {
      */
     get authorization() {
         return this.storageService.authorization;
+    }
+
+    /**
+     * @return String fuer Basic-Authentifizierung
+     * TODO: anderer Weg?
+     */
+    get basicAuthorization() {
+        const base64 = window.btoa('admin:p');
+        const basicAuth = `Basic ${base64}`;
+        return basicAuth;
     }
 
     /**
