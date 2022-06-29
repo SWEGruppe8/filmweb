@@ -8,6 +8,16 @@ export type FilmGenre = 'ACTION' | 'COMEDY';
 export const HOMEPAGE_REGEX =
     // eslint-disable-next-line max-len
     /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/u;
+
+export const ISAN_REGEX =
+    // eslint-disable-next-line max-len
+    /\d{3}-\d-\d{5}-\d{3}-\d|\d-\d{5}-\d{3}-\d|\d-\d{4}-\d{4}-\d|\d{3}-\d{10}|\d{13}/u;
+
+export interface Regisseur {
+    nachname: string;
+    vorname: string;
+}
+
 /**
  * Model als Plain-Old-JavaScript-Object (POJO) fuer die Daten *UND*
  * Functions fuer Abfragen und Aenderungen.
@@ -16,13 +26,16 @@ export interface Film {
     id?: string;
     version?: number;
     titel: string;
-    rating: number | undefined;
+    bewertung: number | undefined;
     genre: FilmGenre;
     studio: Studio | '' | undefined;
-    online: boolean | undefined;
-    datum: Temporal.PlainDate | undefined;
+    newsletter: boolean | undefined;
+    release: Temporal.PlainDate | undefined;
+    umsatz: number;
+    regisseur: Regisseur;
     homepage: string;
-    schlagwoerter: string[];
+    isan: string;
+    schauspieler: string[];
 }
 
 /**
@@ -36,6 +49,9 @@ export interface FilmShared {
     titel: string | undefined;
     studio?: Studio | '';
     genre: FilmGenre;
-    online?: boolean;
+    newsletter?: boolean;
     homepage: string;
+    umsatz: number;
+    regisseur: Regisseur;
+    isan: string;
 }

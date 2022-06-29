@@ -1,3 +1,5 @@
+import type { Regisseur } from './film';
+// eslint-disable-next-line sort-imports
 import { type Film, type FilmGenre, type Studio } from './film';
 import { type FilmServer, toFilm } from './filmServer';
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
@@ -19,7 +21,8 @@ export interface Suchkriterien {
     titel: string;
     studio: Studio | '';
     genre: FilmGenre | '';
-    schlagwoerter: { spannend: boolean; gruselig: boolean };
+    regisseur: Regisseur | { nachname: ''; vorname: '' };
+    schauspieler: { salma: boolean; leonardo: boolean };
 }
 
 export interface FilmeServer {
@@ -217,8 +220,8 @@ export class FilmReadService {
             return httpParams;
         }
 
-        const { titel, studio, genre, schlagwoerter } = suchkriterien;
-        const { spannend, gruselig } = schlagwoerter;
+        const { titel, studio, genre, schauspieler } = suchkriterien;
+        const { salma, leonardo } = schauspieler;
 
         if (titel !== '') {
             httpParams = httpParams.set('titel', titel);
@@ -229,11 +232,11 @@ export class FilmReadService {
         if (studio !== '') {
             httpParams = httpParams.set('studio', studio);
         }
-        if (spannend) {
-            httpParams = httpParams.set('spannend', 'true');
+        if (salma) {
+            httpParams = httpParams.set('salma', 'true');
         }
-        if (gruselig) {
-            httpParams = httpParams.set('gruselig', 'true');
+        if (leonardo) {
+            httpParams = httpParams.set('leonardo', 'true');
         }
         return httpParams;
     }

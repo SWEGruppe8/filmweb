@@ -4,6 +4,7 @@ export {
     type FilmShared,
     type Studio,
     HOMEPAGE_REGEX,
+    ISAN_REGEX,
     MAX_RATING,
 } from './film';
 export {
