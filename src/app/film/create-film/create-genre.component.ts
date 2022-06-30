@@ -14,7 +14,7 @@ export class CreateGenreComponent implements OnInit {
     @Input()
     createForm!: FormGroup;
 
-    readonly genre = new FormControl('COMEDY');
+    readonly genre = new FormControl('LUSTIG');
 
     ngOnInit() {
         log.debug('CreateGenreComponent.ngOnInit');
