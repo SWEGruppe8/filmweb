@@ -16,6 +16,8 @@ export interface FilmForm extends FilmShared {
     leonardo: boolean;
     betrag: number;
     waehrung: string;
+    nachname: string;
+    vorname: string;
 }
 
 /**
@@ -39,7 +41,8 @@ export const toFilm = (filmForm: FilmForm) => {
         genre,
         salma,
         leonardo,
-        regisseur,
+        nachname,
+        vorname,
     } = filmForm;
 
     const bewertungNumber = Number(bewertung);
@@ -70,7 +73,7 @@ export const toFilm = (filmForm: FilmForm) => {
         studio,
         genre,
         schauspieler,
-        regisseur,
+        regisseur: { nachname, vorname },
         version: 0,
     };
     log.debug('toFilm: film=', film);
