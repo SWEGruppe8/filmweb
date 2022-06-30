@@ -232,10 +232,10 @@ export class FilmReadService {
             httpParams = httpParams.set('studio', studio);
         }
         if (salma) {
-            httpParams = httpParams.set('salma', 'true');
+            httpParams = httpParams.set('schauspieler', 'S');
         }
         if (leonardo) {
-            httpParams = httpParams.set('leonardo', 'true');
+            httpParams = httpParams.set('schauspieler', 'L');
         }
         return httpParams;
     }

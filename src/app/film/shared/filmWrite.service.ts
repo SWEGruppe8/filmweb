@@ -112,7 +112,7 @@ export class FilmWriteService {
         log.debug('FilmWriteService.update: film=', film);
 
         // id, version und schaupsieler gehoeren nicht zu den serverseitigen Nutzdaten
-        const { id, version, schauspieler, ...filmDTO } = film; // eslint-disable-line @typescript-eslint/no-unused-vars
+        const { id, version, ...filmDTO } = film;
         if (version === undefined) {
             const msg = `Keine Versionsnummer fuer den Film ${id}`;
             log.debug(msg);
