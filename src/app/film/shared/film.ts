@@ -36,8 +36,8 @@ export interface Film {
     release: Temporal.PlainDate | undefined;
     umsatz: Umsatz;
     homepage: string;
-    studio: string[];
-    genre: string[];
+    studio: Studio | '' | undefined;
+    genre: FilmGenre;
     schauspieler: string[];
     regisseur: Regisseur;
 }
