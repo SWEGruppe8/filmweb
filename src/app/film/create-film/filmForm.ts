@@ -50,10 +50,10 @@ export const toFilm = (filmForm: FilmForm) => {
 
     const schauspieler: string[] = [];
     if (salma) {
-        schauspieler.push('SALMA');
+        schauspieler.push('S');
     }
     if (leonardo) {
-        schauspieler.push('LEONARDO');
+        schauspieler.push('L');
     }
 
     const film: Film = {
