@@ -2,9 +2,9 @@ import { type Temporal } from '@js-temporal/polyfill';
 
 export const MAX_BEWERTUNG = 5;
 
-export type Studio = 'D' | 'WARNER';
+export type Studio = 'D' | 'W';
 
-export type FilmGenre = 'ACTION' | 'LUSTIG';
+export type FilmGenre = 'A' | 'L';
 export const HOMEPAGE_REGEX =
     // eslint-disable-next-line max-len
     /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/u;

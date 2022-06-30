@@ -37,7 +37,7 @@
           <td (click)="onClick(film)">{{ film.titel }}</td>
           <td (click)="onClick(film)">
             <span [ngSwitch]="film.studio">
-              <span *ngSwitchCase="'WARNER'">Warner</span>
+              <span *ngSwitchCase="'W'">Warner</span>
               <span *ngSwitchCase="'D'">Disney</span>
               <span *ngSwitchDefault>unbekannt</span>
             </span>
