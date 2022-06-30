@@ -1,7 +1,7 @@
 // eslint-disable-next-line eslint-comments/disable-enable-pair
 /* eslint-disable max-lines-per-function */
 import { type Film, type FilmShared } from './film';
-import type { Regisseur } from './film';
+import type { FilmGenre, Regisseur, Studio, Umsatz } from './film';
 import { Temporal } from '@js-temporal/polyfill';
 import log from 'loglevel';
 
@@ -19,8 +19,15 @@ interface Link {
  * </ul>
  */
 export interface FilmServer extends FilmShared {
+    titel: string;
+    isan: string;
     bewertung?: number;
+    newsletter?: boolean;
     release?: string;
+    umsatz: Umsatz;
+    homepage: string;
+    studio?: Studio | '';
+    genre: FilmGenre;
     schauspieler?: string[];
     regisseur: Regisseur;
     // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -30,6 +37,34 @@ export interface FilmServer extends FilmShared {
         add?: Link;
         update?: Link;
         remove?: Link;
+    };
+}
+
+export interface CreateFilmServer {
+    kunde: {
+        titel: string;
+        isan: string;
+        bewertung?: number;
+        newsletter?: boolean;
+        release?: string;
+        umsatz: Umsatz;
+        homepage: string;
+        studio?: Studio | '';
+        genre: FilmGenre;
+        schauspieler?: string[];
+        regisseur: Regisseur;
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        _links?: {
+            self: Link;
+            list?: Link;
+            add?: Link;
+            update?: Link;
+            remove?: Link;
+        };
+    };
+    user: {
+        username: string;
+        password: string;
     };
 }
 
@@ -46,6 +81,7 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
         const { self } = _links;
         selfLink = self.href;
     }
+
     let id: string | undefined;
     if (selfLink !== undefined) {
         const lastSlash = selfLink.lastIndexOf('/');
@@ -86,7 +122,7 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
 
     const film: Film = {
         id,
-        titel: titel ?? 'unbekannt',
+        titel,
         isan,
         bewertung,
         newsletter,
@@ -108,20 +144,26 @@ export const toFilm = (filmServer: FilmServer, etag?: string) => {
  * Web Service.
  * @return Das JSON-Objekt f&uuml;r den RESTful Web Service
  */
-export const toFilmServer = (film: Film): FilmServer => {
+export const toFilmServer = (film: Film): CreateFilmServer => {
     const release =
         film.release === undefined ? undefined : film.release.toString();
     return {
-        titel: film.titel,
-        bewertung: film.bewertung,
-        genre: film.genre,
-        studio: film.studio,
-        release,
-        umsatz: film.umsatz,
-        regisseur: film.regisseur,
-        newsletter: film.newsletter,
-        homepage: film.homepage,
-        schauspieler: film.schauspieler,
-        isan: film.isan,
+        kunde: {
+            titel: film.titel,
+            isan: film.isan,
+            bewertung: film.bewertung,
+            newsletter: film.newsletter,
+            release,
+            umsatz: film.umsatz,
+            homepage: film.homepage,
+            studio: film.studio,
+            genre: film.genre,
+            schauspieler: film.schauspieler,
+            regisseur: film.regisseur,
+        },
+        user: {
+            username: film.titel,
+            password: `${film.titel}`,
+        },
     };
 };
