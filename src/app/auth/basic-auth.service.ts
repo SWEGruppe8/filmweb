@@ -15,7 +15,7 @@ import { paths } from '../shared';
 
 enum Rolle {
     ADMIN = 'ADMIN',
-    KUNDE = 'KUNDE',
+    FILM = 'FILM',
     ACTUATOR = 'ACTUATOR',
 }
 
