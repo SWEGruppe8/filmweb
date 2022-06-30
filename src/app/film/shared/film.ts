@@ -2,7 +2,7 @@ import { type Temporal } from '@js-temporal/polyfill';
 
 export const MAX_BEWERTUNG = 5;
 
-export type Studio = 'DISNEY' | 'WARNER';
+export type Studio = 'D' | 'WARNER';
 
 export type FilmGenre = 'ACTION' | 'LUSTIG';
 export const HOMEPAGE_REGEX =
