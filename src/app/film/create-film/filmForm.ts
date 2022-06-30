@@ -14,6 +14,8 @@ export interface FilmForm extends FilmShared {
     release: Date;
     salma: boolean;
     leonardo: boolean;
+    betrag: number;
+    waehrung: string;
 }
 
 /**
@@ -30,7 +32,8 @@ export const toFilm = (filmForm: FilmForm) => {
         bewertung,
         newsletter,
         release,
-        umsatz,
+        betrag,
+        waehrung,
         homepage,
         studio,
         genre,
@@ -62,7 +65,7 @@ export const toFilm = (filmForm: FilmForm) => {
         bewertung: bewertungNumber,
         newsletter,
         release: releaseTemporal,
-        umsatz,
+        umsatz: { betrag, waehrung },
         homepage,
         studio,
         genre,

@@ -73,23 +73,22 @@ export class UpdateFilmComponent implements OnInit {
         }
 
         const { titel } = this.updateForm.value as { titel: string };
-        const { genre } = this.updateForm.value as { genre: FilmGenre };
+        const { isan } = this.updateForm.value as { isan: string };
+        const { bewertung } = this.updateForm.value as { bewertung: number };
+        const { homepage } = this.updateForm.value as { homepage: string };
         const { studio } = this.updateForm.value as {
             studio: Studio | '' | undefined;
         };
-        const { bewertung } = this.updateForm.value as { bewertung: number };
-        const { isan } = this.updateForm.value as { isan: string };
-        const { homepage } = this.updateForm.value as { homepage: string };
-
+        const { genre } = this.updateForm.value as { genre: FilmGenre };
         const { film, service } = this;
 
         // release kann im Formular nicht geaendert werden
         film.titel = titel;
-        film.genre = genre;
-        film.studio = studio;
-        film.bewertung = bewertung;
         film.isan = isan;
+        film.bewertung = bewertung;
         film.homepage = homepage;
+        film.studio = studio;
+        film.genre = genre;
         log.debug('UpdateFilmComponent.onSubmit: film=', film);
 
         service
