@@ -8,7 +8,7 @@ import log from 'loglevel';
 
 /**
  * Komponente mit dem Tag &lt;hs-liniendiagramm&gt; zur Visualisierung
- * von Rating durch ein Liniendiagramm.
+ * von Bewertung durch ein Liniendiagramm.
  */
 @Component({
     selector: 'hs-liniendiagramm',
