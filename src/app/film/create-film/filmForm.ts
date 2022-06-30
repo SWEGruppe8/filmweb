@@ -37,9 +37,9 @@ export const toFilm = (filmForm: FilmForm) => {
         homepage,
         studio,
         genre,
-        regisseur,
         salma,
         leonardo,
+        regisseur,
     } = filmForm;
 
     const bewertungNumber = Number(bewertung);
