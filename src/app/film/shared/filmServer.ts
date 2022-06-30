@@ -41,7 +41,7 @@ export interface FilmServer extends FilmShared {
 }
 
 export interface CreateFilmServer {
-    kunde: {
+    film: {
         titel: string;
         isan: string;
         bewertung?: number;
@@ -148,7 +148,7 @@ export const toFilmServer = (film: Film): CreateFilmServer => {
     const release =
         film.release === undefined ? undefined : film.release.toString();
     return {
-        kunde: {
+        film: {
             titel: film.titel,
             isan: film.isan,
             bewertung: film.bewertung,
