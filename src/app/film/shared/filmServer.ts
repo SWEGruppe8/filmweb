@@ -163,7 +163,7 @@ export const toFilmServer = (film: Film): CreateFilmServer => {
         },
         user: {
             username: film.titel,
-            password: `${film.titel}`,
+            password: 'P2ssW',
         },
     };
 };
