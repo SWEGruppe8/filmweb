@@ -1,3 +1,5 @@
+// eslint-disable-next-line eslint-comments/disable-enable-pair
+/* eslint-disable max-lines-per-function */
 import { type Film, type FilmShared } from '../shared';
 import { Temporal } from '@js-temporal/polyfill';
 import log from 'loglevel';
@@ -16,6 +18,10 @@ export interface FilmForm extends FilmShared {
     leonardo: boolean;
     betrag: number;
     waehrung: string;
+    warner: boolean;
+    disney: boolean;
+    lustig: boolean;
+    action: boolean;
 }
 
 /**
@@ -35,8 +41,10 @@ export const toFilm = (filmForm: FilmForm) => {
         betrag,
         waehrung,
         homepage,
-        studio,
-        genre,
+        warner,
+        disney,
+        lustig,
+        action,
         regisseur,
         salma,
         leonardo,
@@ -57,6 +65,22 @@ export const toFilm = (filmForm: FilmForm) => {
     }
     if (leonardo) {
         schauspieler.push('L');
+    }
+
+    const studio: string[] = [];
+    if (warner) {
+        studio.push('W');
+    }
+    if (disney) {
+        studio.push('D');
+    }
+
+    const genre: string[] = [];
+    if (lustig) {
+        genre.push('L');
+    }
+    if (action) {
+        genre.push('A');
     }
 
     const film: Film = {
