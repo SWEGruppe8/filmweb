@@ -1,5 +1,3 @@
-import type { Regisseur } from './film';
-// eslint-disable-next-line sort-imports
 import { type Film, type FilmGenre, type Studio } from './film';
 import { type FilmServer, toFilm } from './filmServer';
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
