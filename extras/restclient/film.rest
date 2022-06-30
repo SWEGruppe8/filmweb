@@ -43,7 +43,7 @@ GET {{localHTTPS}}/rest/filme?bewertung=1
 GET {{localHTTPS}}/rest/filme?online=true
 
 ### Neuen Film anlegen
-POST {{localHTTPS}}/rest/filme
+POST https://localhost:3000/api
 Content-Type: application/json
 Authorization: Bearer {{login.response.body.$.token}}
 

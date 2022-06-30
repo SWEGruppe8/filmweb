@@ -1,5 +1,5 @@
 import { Component, Input, type OnInit } from '@angular/core';
-import { FormControl, type FormGroup } from '@angular/forms';
+import { FormControl, type FormGroup, Validators } from '@angular/forms';
 import log from 'loglevel';
 
 /**
@@ -14,7 +14,7 @@ export class CreateGenreComponent implements OnInit {
     @Input()
     createForm!: FormGroup;
 
-    readonly genre = new FormControl('L');
+    readonly genre = new FormControl(undefined, Validators.required);
 
     ngOnInit() {
         log.debug('CreateGenreComponent.ngOnInit');

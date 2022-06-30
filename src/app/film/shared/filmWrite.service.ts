@@ -46,7 +46,7 @@ export class FilmWriteService {
     }
 
     /**
-     * Ein neues Film anlegen
+     * Einen neuen Filmn anlegen
      * @param neuesFilm Das JSON-Objekt mit dem neuen Film
      */
     save(film: Film): Observable<SaveError | string> {
@@ -61,8 +61,13 @@ export class FilmWriteService {
         });
         /* eslint-enable @typescript-eslint/naming-convention */
 
+        log.debug(
+            'filmWrite.service: body=',
+            JSON.stringify(toFilmServer(film)),
+        );
+
         return this.httpClient
-            .post(this.#baseUrl, toFilmServer(film), {
+            .post(this.#baseUrl, JSON.stringify(toFilmServer(film)), {
                 headers,
                 observe: 'response',
                 responseType: 'text',
@@ -105,16 +110,15 @@ export class FilmWriteService {
     }
 
     /**
-     * Ein vorhandenes Film aktualisieren
+     * Ein Vorhandenen Filmn aktualisieren
      * @param film Das JSON-Objekt mit den aktualisierten Filmdaten
      */
     update(film: Film): Observable<Film | UpdateError> {
         log.debug('FilmWriteService.update: film=', film);
 
-        // id, version und schaupsieler gehoeren nicht zu den serverseitigen Nutzdaten
-        const { id, version, ...filmDTO } = film;
+        const { version, id } = film;
         if (version === undefined) {
-            const msg = `Keine Versionsnummer fuer den Film ${id}`;
+            const msg = `Keine Versionsnummer fuer das Film ${id}`;
             log.debug(msg);
             return of(new UpdateError(-1, msg));
         }
@@ -129,9 +133,13 @@ export class FilmWriteService {
         /* eslint-enable @typescript-eslint/naming-convention */
         log.debug('FilmWriteService.update: headers=', headers);
 
-        log.debug('FilmWriteService.update: filmDTO=', filmDTO);
+        // id und version gehoeren nicht zu den serverseitigen Nutzdaten
+        delete film.id;
+        delete film.version;
+
+        log.debug('FilmWriteService.update: filmDTO=', film);
         return this.httpClient
-            .put(url, filmDTO, { headers, observe: 'response' })
+            .put(url, film, { headers, observe: 'response' })
             .pipe(
                 first(),
                 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -174,7 +182,7 @@ export class FilmWriteService {
     }
 
     /**
-     * Ein Film l&ouml;schen
+     * Einen Filmn l&ouml;schen
      * @param film Das JSON-Objekt mit dem zu loeschenden Film
      */
     remove(film: Film): Observable<Record<string, unknown> | RemoveError> {

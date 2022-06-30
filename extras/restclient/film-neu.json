@@ -1,12 +1,28 @@
 {
-    "titel": "Test",
+  "film": {
+    "titel": "Testasd",
+    "isan": "135131-1351531-353",
     "bewertung": 1,
-    "genre": "L",
+    "newsletter": true,
+    "release": "2021-01-31",
+    "umsatz": {
+      "betrag": 0,
+      "waehrung": "EUR"
+    },
+    "homepage": "https://www.test.de",
     "studio": "W",
-    "online": true,
-    "datum": "2020-02-01",
-    "homepage": "0-0070-0644-6",
-    "homepage": "https://test.de/",
-    "schlagwoerter": ["SPANNEND", "GRUSELIG"]
+    "genre": "L",
+    "schauspieler": [
+      "R",
+      "L"
+    ],
+    "regisseur": {
+      "nachname": "12345",
+      "vorname": "Testort"
+    }
+  },
+  "user": {
+    "username": "tesasdt",
+    "password": "Pass1234"
   }
-  
+}

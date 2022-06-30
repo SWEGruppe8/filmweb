@@ -10,7 +10,7 @@ import log from 'loglevel';
  * </ul>
  */
 export interface FilmForm extends FilmShared {
-    bewertung: number;
+    bewertung: string;
     release: Date;
     salma: boolean;
     leonardo: boolean;
