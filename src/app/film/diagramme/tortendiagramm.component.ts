@@ -8,7 +8,7 @@ import log from 'loglevel';
 
 /**
  * Komponente mit dem Tag &lt;hs-tortendiagramm&gt; zur Visualisierung
- * von Rating  durch ein Tortendiagramm.
+ * von Bewertung  durch ein Tortendiagramm.
  */
 @Component({
     selector: 'hs-tortendiagramm',

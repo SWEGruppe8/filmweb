@@ -26,7 +26,7 @@ import log from 'loglevel';
 
 /**
  * Komponente mit dem Tag &lt;hs-balkendiagramm&gt; zur Visualisierung
- * von Rating  durch ein Balkendiagramm.
+ * von Bewertung  durch ein Balkendiagramm.
  * https://blog.angular-university.io/angular-viewchild
  */
 @Component({
